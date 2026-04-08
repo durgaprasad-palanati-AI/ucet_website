@@ -79,43 +79,50 @@ const COLLEGE_DATA = {
       "name": "Computer Science & Engineering",
       "about": "B.Tech",
       "intake": "132 seats",
-      "icon": "fas fa-laptop-code"
+      "icon": "fas fa-laptop-code",
+      "url": "cse.html"
     },
     {
       "name": "Electronics & Comm.",
       "about": "B.Tech",
       "intake": "66 seats",
-      "icon": "fas fa-microchip"
+      "icon": "fas fa-microchip",
+      "url": "ece.html"
     },
     {
       "name": "Electrical Engg.",
       "icon": "fas fa-bolt",
-      "intake": "60 seats",
-      "about": "B.Tech"
+      "intake": "66 seats",
+      "about": "B.Tech",
+      "url": "eee.html"
     },
     {
       "name": "MCA",
       "about": "Post Graduate",
-      "intake": "60 seats",
-      "icon": "fas fa-code"
+      "intake": "66 seats",
+      "icon": "fas fa-code",
+      "url": "mca.html"
     },
     {
       "name": "Computer Science & Informatics",
       "about": "MCA",
       "intake": "66",
-      "icon": "fas fa-book"
+      "icon": "fas fa-book",
+      "url": "csi.html"
     },
     {
       "name": "Basic Science and Humanities",
       "about": "B.TECH",
       "intake": "66",
-      "icon": "fas fa-book"
+      "icon": "fas fa-book",
+      "url": "bsh.html"
     },
     {
       "name": "Mechanical Engineering (Interdisciplinary)",
       "about": "B.TECH",
       "intake": "66",
-      "icon": "fas fa-book"
+      "icon": "fas fa-book",
+      "url": "mech.html"
     }
   ],
   "faculty": [
@@ -124,49 +131,56 @@ const COLLEGE_DATA = {
       "designation": "Principal",
       "dept": "Administration",
       "qual": "M.Tech., Ph.D-Italy, LMISTE.",
-      "photo": "images/rekhamam.webp"
+      "photo": "images/rekhamam.webp",
+      "url":"RRR.html"
     },
     {
       "name": "Dr. M. Jayanthi",
       "designation": "HOD - CSI",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech( CSE) ,PhD(CSE) OU",
-      "photo": "images/jayanthi.webp"
+      "photo": "images/jayanthi.webp",
+      "url":"jayanthi.html"
     },
     {
       "name": "Prof. R.Rekha",
       "designation": "Prof.",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech",
-      "photo": "images/rekhamam.webp"
+      "photo": "images/rekhamam.webp",
+       "url":"RRR.html"
     },
     {
       "name": "Dr.D.Sandhya Rani",
       "designation": "Assistant Professor",
       "dept": "Computer Science & Informatics",
       "qual": "B.Tech(CSE),M.Tech(CSE),Ph.D.",
-      "photo": "images/Sandhya.webp"
+      "photo": "images/Sandhya.webp",
+      "url":"sandhya.html"
     },
     {
       "name": "Dr. K. Harish Kumar",
       "designation": "Assistant Professor",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE),LMCSI,LMISTE",
-      "photo": "images/Harish.webp"
+      "photo": "images/Harish.webp",
+       "url":"Harish.html"
     },
     {
       "name": "Dr. Ch. Sudha Rani",
       "designation": "Assistant Professor",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE)",
-      "photo": "images/Sudharani.webp"
+      "photo": "images/Sudharani.webp",
+      "url":"sudharani.html"
     },
     {
       "name": "P. Durga Prasad",
       "designation": "Assistant Professor (C)",
       "dept": "Computer Science & Engineering",
       "qual": "B.TECH, M.TECH",
-      "photo": "images/Durgaprasad.webp"
+      "photo": "images/Durgaprasad.webp",
+      "url":"durgaprasad.html"
     },
     {
       "name": "Mrs. M.Jyothi Rani",
@@ -180,7 +194,8 @@ const COLLEGE_DATA = {
       "designation": "Assistant Professor(C)",
       "dept": "Computer Science & Engineering",
       "qual": "BTech(CSE),MTech(CSE)",
-      "photo": "images/Swarnalatha.webp"
+      "photo": "images/Swarnalatha.webp",
+      "url":"swarnalatha.html"
     },
     {
       "name": "Mrs. A. Rajeshwari",
@@ -391,15 +406,15 @@ const COLLEGE_DATA = {
   "footerLinks": [
     {
       "label": "Admission Portal",
-      "url": "#"
+      "url": "https://mguniversity.ac.in/director"
     },
     {
       "label": "Exam Results",
-      "url": "#"
+      "url": "https://mguniversity.in/notifications"
     },
     {
       "label": "Library",
-      "url": "#"
+      "url": "https://mguniversity.ac.in/library"
     },
     {
       "label": "Alumni",
@@ -415,5 +430,9 @@ const COLLEGE_DATA = {
     "instagram": "#",
     "youtube": "#",
     "twitter": "#"
-  }
+  },
+  "cseDepartment": {
+  "heroSub": "CSE DEPARTMENT",
+  "heroTitle": "Welcome to the Computer Science Department"
+}
 };

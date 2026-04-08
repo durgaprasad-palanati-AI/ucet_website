@@ -83,9 +83,11 @@ topBtn.onclick = function () {
   const deptGrid = document.getElementById('dept-grid');
   if (deptGrid) {
     deptGrid.innerHTML = d.departments.map(dep => `
+      <a href="${dep.url}" class="dept-link">
       <div class="dept-card">
         <div class="dept-icon"><i class="${dep.icon}"></i></div>
         <h3>${dep.name}</h3>
+        
         <p>${dep.about}</p>
         <p style="font-size:12px;color:#999;margin-top:4px">${dep.intake}</p>
       </div>`).join('');
@@ -96,6 +98,7 @@ topBtn.onclick = function () {
   const filterBar = document.getElementById('faculty-filter');
   if (filterBar) {
     filterBar.innerHTML = depts.map((dep, i) =>
+      
       `<button class="filter-btn${i === 0 ? ' active' : ''}" onclick="filterFaculty('${dep}')">${dep === 'all' ? 'All' : dep}</button>`
     ).join('');
   }
@@ -151,6 +154,7 @@ function renderFaculty(dept) {
     b.classList.toggle('active', b.textContent === (dept === 'all' ? 'All' : dept));
   });
   grid.innerHTML = list.map(f => `
+     <a href="${f.url}" class="faculty-link">
     <div class="faculty-card">
       <div class="faculty-photo">
         ${f.photo ? `<img src="${f.photo}" alt="${f.name}"/>` : `<i class="fas fa-user-tie"></i>`}

@@ -34,19 +34,19 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 .college-name-area h1 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--primary); line-height: 1.2; }
 .college-name-area p { font-size: 13px; color: var(--primary-light); font-weight: 600; }
 .college-name-area small { font-size: 11px; color: var(--text-light); }
-.nav { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
-.nav a { color: var(--text); text-decoration: none; padding: 7px 12px; border-radius: 6px; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.nav { margin-left: auto; display: flex; gap: 4px;  flex-wrap: nowrap;  }
+.nav a { color: var(--text); text-decoration: none; padding: 7px 12px; border-radius: 6px; font-size: 16px; font-weight: 600; transition: all 0.2s; white-space: nowrap;}
 .nav a:hover { background: var(--primary); color: var(--white); }
 .hamburger { display: none; font-size: 22px; cursor: pointer; color: var(--primary); }
 
 /* ===== HERO ===== */
-.hero { position: relative; background: linear-gradient(135deg, #0d1f42 0%, #1a3a6b 50%, #1e4a8a 100%); min-height: 560px; display: flex; align-items: center; overflow: hidden; }
+.hero { position: relative; background: linear-gradient(135deg, #420d13 0%, #1a3a6b 50%, #1e4a8a 100%); height: 260px; display: flex; align-items: center; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
 .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: auto; padding: 60px 20px; color: white; }
 .hero-sub { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-light); margin-bottom: 12px; font-weight: 600; }
-.hero-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); line-height: 1.15; margin-bottom: 20px; max-width: 700px; }
+.hero-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); line-height: 0.5; margin-bottom: 20px; max-width: 700px; }
 .hero-content h2 span { color: var(--accent); }
-.hero-content p { font-size: 17px; color: #b8c8e8; max-width: 550px; margin-bottom: 36px; line-height: 1.7; }
+.hero-content p { font-size: 12px; color: #b8c8e8; max-width: 550px; margin-bottom: 36px; line-height: 0.7; }
 .hero-btns { display: flex; gap: 14px; margin-bottom: 56px; flex-wrap: wrap; }
 .btn-primary { background: var(--accent); color: var(--primary); padding: 13px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 15px; transition: all 0.2s; border: none; cursor: pointer; }
 .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
@@ -280,4 +280,32 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 
 #logo-placeholder {
   display: none;
+}
+/* departments links*/
+.dept-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dept-card {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.dept-card:hover {
+  transform: translateY(-5px);
+}
+/* faculty links */
+.faculty-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.faculty-card {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.faculty-card:hover {
+  transform: translateY(-5px);
 }
