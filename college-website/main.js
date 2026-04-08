@@ -32,12 +32,45 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── ABOUT ──
   setText('about-para1', d.about.para1);
   setText('about-para2', d.about.para2);
+  const programList = document.getElementById('about-programs');
+
+d.about.programs.forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = item;
+  programList.appendChild(li);
+});
+
+  setText('about-para3', d.about.para3);
+setText('about-para4', d.about.para4);
+setText('about-para5', d.about.para5);
+setText('about-para6', d.about.para6);
+setText('about-para7', d.about.para7);
+setText('about-para8', d.about.para8);
   const hEl = document.getElementById('about-highlights');
   if (hEl) {
     hEl.innerHTML = d.about.highlights.map(h =>
       `<div class="highlight-item"><i class="fas fa-check-circle"></i> ${h}</div>`
     ).join('');
   }
+// -- goto top
+const topBtn = document.getElementById("goTopBtn");
+
+// Show button on scroll
+window.onscroll = function () {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+};
+
+// Scroll to top on click
+topBtn.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
 
   // ── MARQUEE ──
   const track = document.getElementById('marquee-track');
@@ -92,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (flEl) {
     flEl.innerHTML = d.footerLinks.map(l => `<li><a href="${l.url}">${l.label}</a></li>`).join('');
   }
+//
 
   // ── SOCIAL ──
   const slEl = document.getElementById('social-links');

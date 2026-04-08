@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 8/4/2026, 7:33:22 pm
+//  Last updated: 8/4/2026, 8:04:56 pm
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -40,8 +40,24 @@ const COLLEGE_DATA = {
     ]
   },
   "about": {
-    "para1": "Founded with a vision to provide world-class education, our college has been a beacon of academic excellence for over two decades. We are committed to nurturing talent and building character.",
-    "para2": "Our state-of-the-art infrastructure, experienced faculty, and industry-oriented curriculum prepare students for the challenges of the modern world.",
+    "para1": "The University College of Engineering & Technology, established in 2013 at Panagal, Nalgonda, is currently functioning from its full-fledged campus at Anneparthy, Nalgonda, with modern infrastructure and well-equipped laboratories. The institution is strategically located to provide accessible technical education to students from rural areas of the district.",
+
+"para2": "The college offers undergraduate B.Tech. programmes in three disciplines, aligned with global standards and focused on equipping students with the dynamic, industry-relevant skills essential for modern engineering.",
+
+"programs": [
+  "Computer Science and Engineering - 132 intake",
+  "Electronics and Communications Engineering - 66 intake",
+  "Electrical and Electronics Engineering - 66 intake"
+],
+
+"para3": "In addition, the college offers a Master of Computer Applications (MCA) two years course at PG level - 66 intake and Ph.D. Research Programme in Computer Science & Informatics. The total annual intake stands at 264 undergraduate and 66 postgraduate students.",
+
+"para4": "Established with the vision of imparting quality engineering education and promoting technological research, the institution focuses on developing skilled technical professionals across diverse domains.",
+
+"para5": "The campus is equipped with state-of-the-art laboratories, Wi-Fi connectivity, and CCTV surveillance in key areas such as computer laboratories, the library, and parking facilities, ensuring a secure and technology-enabled environment.",
+
+"para6": "The college places strong emphasis on skill development and career readiness through regular training programs and placement drives. These initiatives have enabled students to secure opportunities in reputed multinational companies such as Wipro, Deloitte, Accenture, Capgemini, and Tristate Solutions.",
+    "para7": "The institution remains committed to academic excellence, innovation, and the holistic development of future-ready engineers.",
     "highlights": [
       "NAAC B+ Accredited",
       "NBA Accredited Programs",
@@ -49,12 +65,13 @@ const COLLEGE_DATA = {
       "100% Wi-Fi Campus"
     ]
   },
+  
   "marquee": [
-    "Admissions Open for 2025-26 Batch",
-    "Annual Sports Day on 15th March",
-    "Placement Drive: TCS & Infosys on 20th Feb",
-    "NAAC Peer Team Visit Scheduled",
-    "New Computer Lab inaugurated with 120 systems",
+    
+    "Annual Sports Day on 15th April",
+    "Placement Drive: TASK on 4th April",
+    "NAAC Peer Team Visit soon",
+    "New Language Computer Lab inaugurated with 30 systems",
     "Scholarship applications invited for SC/ST students"
   ],
   "departments": [
@@ -107,217 +124,217 @@ const COLLEGE_DATA = {
       "designation": "Principal",
       "dept": "Administration",
       "qual": "M.Tech., Ph.D-Italy, LMISTE.",
-      "photo": "D:\\ucet_website\\college-website\\images\\rekhamam.webp"
+      "photo": "images/rekhamam.webp"
     },
     {
       "name": "Dr. M. Jayanthi",
       "designation": "HOD - CSI",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech( CSE) ,PhD(CSE) OU",
-      "photo": "D:\\ucet_website\\college-website\\images\\jayanthi.webp"
+      "photo": "images/jayanthi.webp"
     },
     {
       "name": "Prof. R.Rekha",
       "designation": "Prof.",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\rekhamam.webp"
+      "photo": "images/rekhamam.webp"
     },
     {
       "name": "Dr.D.Sandhya Rani",
       "designation": "Assistant Professor",
       "dept": "Computer Science & Informatics",
       "qual": "B.Tech(CSE),M.Tech(CSE),Ph.D.",
-      "photo": "D:\\ucet_website\\college-website\\images\\Sandhya.webp"
+      "photo": "images/Sandhya.webp"
     },
     {
       "name": "Dr. K. Harish Kumar",
       "designation": "Assistant Professor",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE),LMCSI,LMISTE",
-      "photo": "D:\\ucet_website\\college-website\\images\\Harish.webp"
+      "photo": "images/Harish.webp"
     },
     {
       "name": "Dr. Ch. Sudha Rani",
       "designation": "Assistant Professor",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE)",
-      "photo": "D:\\ucet_website\\college-website\\images\\Sudharani.webp"
+      "photo": "images/Sudharani.webp"
     },
     {
       "name": "P. Durga Prasad",
       "designation": "Assistant Professor (C)",
       "dept": "Computer Science & Engineering",
       "qual": "B.TECH, M.TECH",
-      "photo": "D:\\ucet_website\\college-website\\images\\Durgaprasad.webp"
+      "photo": "images/Durgaprasad.webp"
     },
     {
       "name": "Mrs. M.Jyothi Rani",
       "designation": "Assistant Professor (C)",
       "dept": "Computer Science & Engineering",
       "qual": "B.TECH(CSIT),M.TECH(CSE)",
-      "photo": "D:\\ucet_website\\college-website\\images\\Jyothirani.webp"
+      "photo": "images/Jyothirani.webp"
     },
     {
       "name": "Ms. Ch. Swarna Latha",
       "designation": "Assistant Professor(C)",
       "dept": "Computer Science & Engineering",
       "qual": "BTech(CSE),MTech(CSE)",
-      "photo": "D:\\ucet_website\\college-website\\images\\Swarnalatha.webp"
+      "photo": "images/Swarnalatha.webp"
     },
     {
       "name": "Mrs. A. Rajeshwari",
       "designation": "Assistant Professor (C)",
       "dept": "Computer Science & Engineering",
       "qual": "B.Tech,M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\Rajeshwari.webp"
+      "photo": "images/Rajeshwari.webp"
     },
     {
       "name": "Mrs. Allani Kalpana",
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Engineering",
       "qual": "B.Tech,M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\Kalpana.webp"
+      "photo": "images/Kalpana.webp"
     },
     {
       "name": "Dr. KANIGIRI BHARATHI",
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Engineering",
       "qual": "B.Tech,M.Tech,Ph.D.",
-      "photo": "D:\\ucet_website\\college-website\\images\\Bharathi.webp"
+      "photo": "images/Bharathi.webp"
     },
     {
       "name": "Mr. Yerukala Saidulu",
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Engineering",
       "qual": "M.Tech(CSE), BEd(Maths),(PHD)",
-      "photo": "D:\\ucet_website\\college-website\\images\\Saidulu.webp"
+      "photo": "images/Saidulu.webp"
     },
     {
       "name": "Mrs. Dudaka Mani Chandana",
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Engineering",
       "qual": "M.Tech(CSE), BEd(Maths)",
-      "photo": "D:\\ucet_website\\college-website\\images\\Manichandana.webp"
+      "photo": "images/Manichandana.webp"
     },
     {
       "name": "G.Mareswararao",
       "designation": "Assistant Professor(C), HOD",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\G.MareswaraRao.webp"
+      "photo": "images/G.MareswaraRao.webp"
     },
     {
       "name": "Mrs.MounikaKasarla",
       "designation": "Assistant Professor(C)",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\Mrs.MounikaKasarla.webp"
+      "photo": "images/Mrs.MounikaKasarla.webp"
     },
     {
       "name": "Mrs.HumaAfreen",
       "designation": "Assistant Professor(C)",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\Mrs.HumaAfreen.webp"
+      "photo": "images/Mrs.HumaAfreen.webp"
     },
     {
       "name": "V.ADILAKSHMI",
       "designation": "Assistant Professor(C)",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\V.ADILAKSHMI.webp"
+      "photo": "images/V.ADILAKSHMI.webp"
     },
     {
       "name": "K.AVINASH BABU",
       "designation": "Assistant Professor(C)",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\K.AVINASH BABU.webp"
+      "photo": "images/K.AVINASH BABU.webp"
     },
     {
       "name": "Y. Naga Raju",
       "designation": "Assistant Professor(C)-HOD",
       "dept": "Electrical Engg.",
       "qual": "M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\YNagaRaju.webp"
+      "photo": "images/YNagaRaju.webp"
     },
     {
       "name": "Mrs. Tallapalli Mounika",
       "designation": "Assistant Professor (C)",
       "dept": "Electrical Engg.",
       "qual": "M.Tech.",
-      "photo": "D:\\ucet_website\\college-website\\images\\MrsTallapalliMounika.webp"
+      "photo": "images/MrsTallapalliMounika.webp"
     },
     {
       "name": "R.RAMASWAMY",
       "designation": "Assistant Professor(PT)",
       "dept": "Electrical Engg.",
       "qual": "M.Tech.",
-      "photo": "D:\\ucet_website\\college-website\\images\\ramas.webp"
+      "photo": "images/ramas.webp"
     },
     {
       "name": "K.LAVANYA",
       "designation": "Assistant Professor (PT)",
       "dept": "Electrical Engg.",
       "qual": "M.Tech",
-      "photo": "D:\\ucet_website\\college-website\\images\\lavanya.webp"
+      "photo": "images/lavanya.webp"
     },
     {
       "name": "Dr. Vijay Kumar Chityala",
       "designation": "Assistant Professor (Contract)",
       "dept": "Basic Science and Humanities",
       "qual": "M.Sc., Ph.D",
-      "photo": "D:\\ucet_website\\college-website\\images\\Vijay.bmp"
+      "photo": "images/Vijay.bmp"
     },
     {
       "name": "Dr. M. Ramachandru",
       "designation": "Assistant Professor (C)",
       "dept": "Basic Science and Humanities",
       "qual": "M.Sc., B.Ed., Ph.D., APSET",
-      "photo": "D:\\ucet_website\\college-website\\images\\Ramachandru.webp"
+      "photo": "images/Ramachandru.webp"
     },
     {
       "name": "PATHI. SHIVA SHANKER",
       "designation": "Assistant Professor",
       "dept": "Mechanical Engineering (Interdisciplinary)",
       "qual": "B.E(Mech), M.Tech(CAD/CAM), Senior Member - ISME",
-      "photo": "D:\\ucet_website\\college-website\\images\\Shivashankar.webp"
+      "photo": "images/Shivashankar.bmp"
     },
     {
       "name": "K. ASHWINI",
       "designation": "Assistant Professor",
       "dept": "Mechanical Engineering (Interdisciplinary)",
       "qual": "B.Tech(Mech), M.Tech(CAD/CAM), (Ph.D)",
-      "photo": "D:\\ucet_website\\college-website\\images\\Ashwini.bmp"
+      "photo": "images/Ashwini.bmp"
     }
   ],
   "notices": [
     {
-      "date": "10 Jan",
+      "date": "10 March",
       "title": "Semester Exams Timetable",
       "body": "B.Tech I, II, III & IV year semester examinations timetable released.",
       "isNew": true,
-      "link": ""
+      "link": "admin/B.Tech examinations time table.pdf"
     },
     {
-      "date": "08 Jan",
+      "date": "08 April",
       "title": "Internal Marks Submission",
-      "body": "Last date for internal marks submission is 15th January.",
+      "body": "Last date for internal marks submission is 15th April.",
       "isNew": true,
-      "link": ""
+      "link": "https://online.mguniversity.in/MGSITS/Index.aspx"
     },
     {
-      "date": "05 Jan",
+      "date": "08 April",
       "title": "Fee Payment Deadline",
-      "body": "Second installment of tuition fee due by 20th January.",
+      "body": "Second installment of tuition fee due by 20th April.",
       "isNew": false,
       "link": ""
     },
     {
-      "date": "01 Jan",
-      "title": "Winter Break Notice",
-      "body": "College will remain closed from Jan 1–3 for winter holidays.",
+      "date": "08 April",
+      "title": "Summer Break Notice",
+      "body": "College will remain closed from May 16 to JUne 15 for summer holidays.",
       "isNew": false,
       "link": ""
     }
@@ -334,27 +351,27 @@ const COLLEGE_DATA = {
       "date": "08-April-2026",
       "title": "B.Tech Semester-II & IV Regular Examinations Fee Notification April-2026",
       "body": "B.Tech Semester-II & IV Regular Examinations Fee Notification April-2026",
-      "link": "D:\\ucet_website\\college-website\\admin\\BTECH_FEES_NOTIFICATION.pdf",
+      "link": "admin/BTECH_FEES_NOTIFICATION.pdf",
       "isNew": true
     }
   ],
   "events": [
     {
-      "date": "15 Jan",
-      "title": "Annual Cultural Fest - UTSAV 2025",
+      "date": "15 April",
+      "title": "Annual Cultural Fest - yuva 2026",
       "body": "Two-day cultural extravaganza with competitions, performances and prize distribution.",
       "isNew": true,
       "link": ""
     },
     {
-      "date": "20 Jan",
-      "title": "Technical Symposium - TECHVISION",
+      "date": "20 April",
+      "title": "Technical Project Expo",
       "body": "Paper presentations, project expo, and hackathon for all engineering students.",
       "isNew": true,
       "link": ""
     },
     {
-      "date": "25 Jan",
+      "date": "25 April",
       "title": "Sports Day 2025",
       "body": "Annual sports meet with inter-department competitions.",
       "isNew": false,
