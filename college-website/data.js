@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 8/4/2026, 6:10:49 pm
+//  Last updated: 8/4/2026, 7:33:22 pm
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -59,7 +59,7 @@ const COLLEGE_DATA = {
   ],
   "departments": [
     {
-      "name": "Computer Science",
+      "name": "Computer Science & Engineering",
       "about": "B.Tech",
       "intake": "132 seats",
       "icon": "fas fa-laptop-code"
@@ -81,64 +81,215 @@ const COLLEGE_DATA = {
       "about": "Post Graduate",
       "intake": "60 seats",
       "icon": "fas fa-code"
+    },
+    {
+      "name": "Computer Science & Informatics",
+      "about": "MCA",
+      "intake": "66",
+      "icon": "fas fa-book"
+    },
+    {
+      "name": "Basic Science and Humanities",
+      "about": "B.TECH",
+      "intake": "66",
+      "icon": "fas fa-book"
+    },
+    {
+      "name": "Mechanical Engineering (Interdisciplinary)",
+      "about": "B.TECH",
+      "intake": "66",
+      "icon": "fas fa-book"
     }
   ],
   "faculty": [
     {
-      "name": "Dr. K. Ramaiah",
+      "name": "Prof. Rekha Redamalla",
       "designation": "Principal",
       "dept": "Administration",
-      "qual": "Ph.D, M.Tech",
-      "photo": ""
+      "qual": "M.Tech., Ph.D-Italy, LMISTE.",
+      "photo": "D:\\ucet_website\\college-website\\images\\rekhamam.webp"
     },
     {
-      "name": "Dr. S. Lakshmi",
-      "designation": "HOD - CSE",
-      "dept": "CSE",
-      "qual": "Ph.D, M.Tech",
-      "photo": ""
+      "name": "Dr. M. Jayanthi",
+      "designation": "HOD - CSI",
+      "dept": "Computer Science & Informatics",
+      "qual": "M.Tech( CSE) ,PhD(CSE) OU",
+      "photo": "D:\\ucet_website\\college-website\\images\\jayanthi.webp"
     },
     {
-      "name": "Prof. R. Nagaraju",
-      "designation": "HOD - ECE",
-      "dept": "ECE",
+      "name": "Prof. R.Rekha",
+      "designation": "Prof.",
+      "dept": "Computer Science & Informatics",
       "qual": "M.Tech",
-      "photo": ""
+      "photo": "D:\\ucet_website\\college-website\\images\\rekhamam.webp"
     },
     {
-      "name": "Dr. V. Suresh",
-      "designation": "HOD - Mech",
-      "dept": "Mechanical",
-      "qual": "Ph.D",
-      "photo": ""
+      "name": "Dr.D.Sandhya Rani",
+      "designation": "Assistant Professor",
+      "dept": "Computer Science & Informatics",
+      "qual": "B.Tech(CSE),M.Tech(CSE),Ph.D.",
+      "photo": "D:\\ucet_website\\college-website\\images\\Sandhya.webp"
     },
     {
-      "name": "Prof. A. Padmavathi",
-      "designation": "Sr. Professor",
-      "dept": "CSE",
-      "qual": "M.Tech, MBA",
-      "photo": ""
+      "name": "Dr. K. Harish Kumar",
+      "designation": "Assistant Professor",
+      "dept": "Computer Science & Informatics",
+      "qual": "M.Tech(CSE), Ph.D.(CSE),LMCSI,LMISTE",
+      "photo": "D:\\ucet_website\\college-website\\images\\Harish.webp"
     },
     {
-      "name": "Dr. B. Ravi Kumar",
-      "designation": "Associate Prof.",
-      "dept": "Civil",
-      "qual": "Ph.D, M.E.",
-      "photo": ""
+      "name": "Dr. Ch. Sudha Rani",
+      "designation": "Assistant Professor",
+      "dept": "Computer Science & Informatics",
+      "qual": "M.Tech(CSE), Ph.D.(CSE)",
+      "photo": "D:\\ucet_website\\college-website\\images\\Sudharani.webp"
     },
     {
-      "name": "Prof. C. Mounika",
-      "designation": "Assistant Prof.",
-      "dept": "ECE",
+      "name": "P. Durga Prasad",
+      "designation": "Assistant Professor (C)",
+      "dept": "Computer Science & Engineering",
+      "qual": "B.TECH, M.TECH",
+      "photo": "D:\\ucet_website\\college-website\\images\\Durgaprasad.webp"
+    },
+    {
+      "name": "Mrs. M.Jyothi Rani",
+      "designation": "Assistant Professor (C)",
+      "dept": "Computer Science & Engineering",
+      "qual": "B.TECH(CSIT),M.TECH(CSE)",
+      "photo": "D:\\ucet_website\\college-website\\images\\Jyothirani.webp"
+    },
+    {
+      "name": "Ms. Ch. Swarna Latha",
+      "designation": "Assistant Professor(C)",
+      "dept": "Computer Science & Engineering",
+      "qual": "BTech(CSE),MTech(CSE)",
+      "photo": "D:\\ucet_website\\college-website\\images\\Swarnalatha.webp"
+    },
+    {
+      "name": "Mrs. A. Rajeshwari",
+      "designation": "Assistant Professor (C)",
+      "dept": "Computer Science & Engineering",
+      "qual": "B.Tech,M.Tech",
+      "photo": "D:\\ucet_website\\college-website\\images\\Rajeshwari.webp"
+    },
+    {
+      "name": "Mrs. Allani Kalpana",
+      "designation": "Assistant Professor (PT)",
+      "dept": "Computer Science & Engineering",
+      "qual": "B.Tech,M.Tech",
+      "photo": "D:\\ucet_website\\college-website\\images\\Kalpana.webp"
+    },
+    {
+      "name": "Dr. KANIGIRI BHARATHI",
+      "designation": "Assistant Professor (PT)",
+      "dept": "Computer Science & Engineering",
+      "qual": "B.Tech,M.Tech,Ph.D.",
+      "photo": "D:\\ucet_website\\college-website\\images\\Bharathi.webp"
+    },
+    {
+      "name": "Mr. Yerukala Saidulu",
+      "designation": "Assistant Professor (PT)",
+      "dept": "Computer Science & Engineering",
+      "qual": "M.Tech(CSE), BEd(Maths),(PHD)",
+      "photo": "D:\\ucet_website\\college-website\\images\\Saidulu.webp"
+    },
+    {
+      "name": "Mrs. Dudaka Mani Chandana",
+      "designation": "Assistant Professor (PT)",
+      "dept": "Computer Science & Engineering",
+      "qual": "M.Tech(CSE), BEd(Maths)",
+      "photo": "D:\\ucet_website\\college-website\\images\\Manichandana.webp"
+    },
+    {
+      "name": "G.Mareswararao",
+      "designation": "Assistant Professor(C), HOD",
+      "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": ""
+      "photo": "D:\\ucet_website\\college-website\\images\\G.MareswaraRao.webp"
     },
     {
-      "name": "Prof. D. Srinivas",
-      "designation": "Assistant Prof.",
-      "dept": "Electrical",
+      "name": "Mrs.MounikaKasarla",
+      "designation": "Assistant Professor(C)",
+      "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": ""
+      "photo": "D:\\ucet_website\\college-website\\images\\Mrs.MounikaKasarla.webp"
+    },
+    {
+      "name": "Mrs.HumaAfreen",
+      "designation": "Assistant Professor(C)",
+      "dept": "Electronics & Comm.",
+      "qual": "M.Tech",
+      "photo": "D:\\ucet_website\\college-website\\images\\Mrs.HumaAfreen.webp"
+    },
+    {
+      "name": "V.ADILAKSHMI",
+      "designation": "Assistant Professor(C)",
+      "dept": "Electronics & Comm.",
+      "qual": "M.Tech",
+      "photo": "D:\\ucet_website\\college-website\\images\\V.ADILAKSHMI.webp"
+    },
+    {
+      "name": "K.AVINASH BABU",
+      "designation": "Assistant Professor(C)",
+      "dept": "Electronics & Comm.",
+      "qual": "M.Tech",
+      "photo": "D:\\ucet_website\\college-website\\images\\K.AVINASH BABU.webp"
+    },
+    {
+      "name": "Y. Naga Raju",
+      "designation": "Assistant Professor(C)-HOD",
+      "dept": "Electrical Engg.",
+      "qual": "M.Tech",
+      "photo": "D:\\ucet_website\\college-website\\images\\YNagaRaju.webp"
+    },
+    {
+      "name": "Mrs. Tallapalli Mounika",
+      "designation": "Assistant Professor (C)",
+      "dept": "Electrical Engg.",
+      "qual": "M.Tech.",
+      "photo": "D:\\ucet_website\\college-website\\images\\MrsTallapalliMounika.webp"
+    },
+    {
+      "name": "R.RAMASWAMY",
+      "designation": "Assistant Professor(PT)",
+      "dept": "Electrical Engg.",
+      "qual": "M.Tech.",
+      "photo": "D:\\ucet_website\\college-website\\images\\ramas.webp"
+    },
+    {
+      "name": "K.LAVANYA",
+      "designation": "Assistant Professor (PT)",
+      "dept": "Electrical Engg.",
+      "qual": "M.Tech",
+      "photo": "D:\\ucet_website\\college-website\\images\\lavanya.webp"
+    },
+    {
+      "name": "Dr. Vijay Kumar Chityala",
+      "designation": "Assistant Professor (Contract)",
+      "dept": "Basic Science and Humanities",
+      "qual": "M.Sc., Ph.D",
+      "photo": "D:\\ucet_website\\college-website\\images\\Vijay.bmp"
+    },
+    {
+      "name": "Dr. M. Ramachandru",
+      "designation": "Assistant Professor (C)",
+      "dept": "Basic Science and Humanities",
+      "qual": "M.Sc., B.Ed., Ph.D., APSET",
+      "photo": "D:\\ucet_website\\college-website\\images\\Ramachandru.webp"
+    },
+    {
+      "name": "PATHI. SHIVA SHANKER",
+      "designation": "Assistant Professor",
+      "dept": "Mechanical Engineering (Interdisciplinary)",
+      "qual": "B.E(Mech), M.Tech(CAD/CAM), Senior Member - ISME",
+      "photo": "D:\\ucet_website\\college-website\\images\\Shivashankar.webp"
+    },
+    {
+      "name": "K. ASHWINI",
+      "designation": "Assistant Professor",
+      "dept": "Mechanical Engineering (Interdisciplinary)",
+      "qual": "B.Tech(Mech), M.Tech(CAD/CAM), (Ph.D)",
+      "photo": "D:\\ucet_website\\college-website\\images\\Ashwini.bmp"
     }
   ],
   "notices": [
@@ -210,7 +361,16 @@ const COLLEGE_DATA = {
       "link": ""
     }
   ],
-  "gallery": [],
+  "gallery": [
+    {
+      "url": "images/college.jpeg",
+      "caption": "Main building"
+    },
+    {
+      "url": "images/projectexpo.jpeg",
+      "caption": "Project Expo-2025"
+    }
+  ],
   "footerLinks": [
     {
       "label": "Admission Portal",
