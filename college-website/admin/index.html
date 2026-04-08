@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel — College Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="admin.css"/>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <i class="fas fa-university"></i>
+    <div>
+      <strong>Admin Panel</strong>
+      <small>College Website Editor</small>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#" class="nav-item active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="#" class="nav-item" data-section="basic-info"><i class="fas fa-info-circle"></i> Basic Info</a>
+    <a href="#" class="nav-item" data-section="hero"><i class="fas fa-star"></i> Hero Section</a>
+    <a href="#" class="nav-item" data-section="about"><i class="fas fa-building"></i> About</a>
+    <a href="#" class="nav-item" data-section="departments"><i class="fas fa-sitemap"></i> Departments</a>
+    <a href="#" class="nav-item" data-section="faculty"><i class="fas fa-user-tie"></i> Faculty</a>
+    <a href="#" class="nav-item" data-section="notices"><i class="fas fa-bell"></i> Notices</a>
+    <a href="#" class="nav-item" data-section="circulars"><i class="fas fa-file-alt"></i> Circulars</a>
+    <a href="#" class="nav-item" data-section="events"><i class="fas fa-calendar-alt"></i> Events</a>
+    <a href="#" class="nav-item" data-section="gallery"><i class="fas fa-images"></i> Gallery</a>
+    <a href="#" class="nav-item" data-section="marquee"><i class="fas fa-bullhorn"></i> Marquee News</a>
+    <a href="#" class="nav-item" data-section="links"><i class="fas fa-link"></i> Footer Links</a>
+    <hr style="border-color:#334155;margin:12px 0"/>
+    <a href="../index.html" class="nav-item" target="_blank"><i class="fas fa-external-link-alt"></i> View Website</a>
+    <a href="#" class="nav-item save-btn" onclick="saveAllData()"><i class="fas fa-download"></i> Export data.js</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main-content">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <h2 id="page-title">Dashboard</h2>
+    <div class="topbar-actions">
+      <button class="btn-save" onclick="saveAllData()"><i class="fas fa-download"></i> Export & Save</button>
+      <a href="../index.html" target="_blank" class="btn-preview"><i class="fas fa-eye"></i> Preview</a>
+    </div>
+  </div>
+
+  <!-- SECTIONS -->
+  <div class="content-area">
+
+    <!-- DASHBOARD -->
+    <section id="section-dashboard" class="panel active">
+      <div class="welcome-card">
+        <h2>👋 Welcome to the Admin Panel</h2>
+        <p>Use the sidebar to manage all sections of your college website. No coding required!</p>
+      </div>
+      <div class="dashboard-grid">
+        <div class="dash-card" onclick="goToSection('notices')"><i class="fas fa-bell"></i><h3 id="dash-notices-count">0</h3><p>Notices</p></div>
+        <div class="dash-card" onclick="goToSection('circulars')"><i class="fas fa-file-alt"></i><h3 id="dash-circulars-count">0</h3><p>Circulars</p></div>
+        <div class="dash-card" onclick="goToSection('faculty')"><i class="fas fa-user-tie"></i><h3 id="dash-faculty-count">0</h3><p>Faculty</p></div>
+        <div class="dash-card" onclick="goToSection('departments')"><i class="fas fa-sitemap"></i><h3 id="dash-dept-count">0</h3><p>Departments</p></div>
+        <div class="dash-card" onclick="goToSection('gallery')"><i class="fas fa-images"></i><h3 id="dash-gallery-count">0</h3><p>Gallery Items</p></div>
+        <div class="dash-card" onclick="goToSection('events')"><i class="fas fa-calendar-alt"></i><h3 id="dash-events-count">0</h3><p>Events</p></div>
+      </div>
+      <div class="instructions-card">
+        <h3><i class="fas fa-lightbulb"></i> How to Use</h3>
+        <ol>
+          <li>Edit any section using the sidebar links</li>
+          <li>Click <strong>"Export & Save"</strong> button to download updated <code>data.js</code></li>
+          <li>Replace the <code>data.js</code> file in your college-website folder</li>
+          <li>Refresh your website — changes appear instantly!</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- BASIC INFO -->
+    <section id="section-basic-info" class="panel">
+      <h2 class="panel-title">Basic College Info</h2>
+      <div class="form-grid">
+        <div class="form-group"><label>College Name</label><input id="f-name" type="text"/></div>
+        <div class="form-group"><label>Tagline / Sub-title</label><input id="f-tagline" type="text"/></div>
+        <div class="form-group"><label>Affiliation / Accreditation</label><input id="f-affiliation" type="text"/></div>
+        <div class="form-group"><label>Phone</label><input id="f-phone" type="text"/></div>
+        <div class="form-group"><label>Email</label><input id="f-email" type="email"/></div>
+        <div class="form-group"><label>Address</label><input id="f-address" type="text"/></div>
+        <div class="form-group"><label>Office Hours</label><input id="f-hours" type="text"/></div>
+        <div class="form-group"><label>Footer Description</label><input id="f-footerdesc" type="text"/></div>
+        <div class="form-group"><label>Facebook URL</label><input id="f-fb" type="text"/></div>
+        <div class="form-group"><label>Instagram URL</label><input id="f-ig" type="text"/></div>
+        <div class="form-group"><label>YouTube URL</label><input id="f-yt" type="text"/></div>
+        <div class="form-group"><label>Twitter URL</label><input id="f-tw" type="text"/></div>
+      </div>
+      <button class="btn-primary" onclick="saveBasicInfo()"><i class="fas fa-save"></i> Save Changes</button>
+    </section>
+
+    <!-- HERO -->
+    <section id="section-hero" class="panel">
+      <h2 class="panel-title">Hero Section</h2>
+      <div class="form-grid">
+        <div class="form-group"><label>Sub-heading (top line)</label><input id="h-sub" type="text"/></div>
+        <div class="form-group"><label>Main Title</label><input id="h-title" type="text"/></div>
+        <div class="form-group full"><label>Description</label><textarea id="h-desc" rows="3"></textarea></div>
+        <div class="form-group"><label>Stat 1 (e.g. 25+)</label><input id="h-s1n" type="text"/></div>
+        <div class="form-group"><label>Stat 1 Label (e.g. Years)</label><input id="h-s1l" type="text"/></div>
+        <div class="form-group"><label>Stat 2</label><input id="h-s2n" type="text"/></div>
+        <div class="form-group"><label>Stat 2 Label</label><input id="h-s2l" type="text"/></div>
+        <div class="form-group"><label>Stat 3</label><input id="h-s3n" type="text"/></div>
+        <div class="form-group"><label>Stat 3 Label</label><input id="h-s3l" type="text"/></div>
+        <div class="form-group"><label>Stat 4</label><input id="h-s4n" type="text"/></div>
+        <div class="form-group"><label>Stat 4 Label</label><input id="h-s4l" type="text"/></div>
+      </div>
+      <button class="btn-primary" onclick="saveHero()"><i class="fas fa-save"></i> Save Changes</button>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="section-about" class="panel">
+      <h2 class="panel-title">About Section</h2>
+      <div class="form-group"><label>Paragraph 1</label><textarea id="ab-p1" rows="4"></textarea></div>
+      <div class="form-group"><label>Paragraph 2</label><textarea id="ab-p2" rows="4"></textarea></div>
+      <div class="form-group"><label>Highlights (one per line)</label><textarea id="ab-hl" rows="6" placeholder="NAAC A+ Accredited&#10;NBA Accredited Programs&#10;ISO 9001:2015 Certified"></textarea></div>
+      <button class="btn-primary" onclick="saveAbout()"><i class="fas fa-save"></i> Save Changes</button>
+    </section>
+
+    <!-- DEPARTMENTS -->
+    <section id="section-departments" class="panel">
+      <h2 class="panel-title">Departments</h2>
+      <p class="hint">Drag rows to reorder. Click ✏️ to edit.</p>
+      <button class="btn-add" onclick="addDeptRow()"><i class="fas fa-plus"></i> Add Department</button>
+      <div class="drag-list" id="dept-list"></div>
+    </section>
+
+    <!-- FACULTY -->
+    <section id="section-faculty" class="panel">
+      <h2 class="panel-title">Faculty Members</h2>
+      <p class="hint">Drag to reorder. Click ✏️ to edit.</p>
+      <button class="btn-add" onclick="addFacultyRow()"><i class="fas fa-plus"></i> Add Faculty</button>
+      <div class="drag-list" id="faculty-list"></div>
+    </section>
+
+    <!-- NOTICES -->
+    <section id="section-notices" class="panel">
+      <h2 class="panel-title">Notices</h2>
+      <button class="btn-add" onclick="addNoticeRow('notices')"><i class="fas fa-plus"></i> Add Notice</button>
+      <div class="drag-list" id="notices-admin-list"></div>
+    </section>
+
+    <!-- CIRCULARS -->
+    <section id="section-circulars" class="panel">
+      <h2 class="panel-title">Circulars</h2>
+      <button class="btn-add" onclick="addNoticeRow('circulars')"><i class="fas fa-plus"></i> Add Circular</button>
+      <div class="drag-list" id="circulars-admin-list"></div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="section-events" class="panel">
+      <h2 class="panel-title">Events</h2>
+      <button class="btn-add" onclick="addNoticeRow('events')"><i class="fas fa-plus"></i> Add Event</button>
+      <div class="drag-list" id="events-admin-list"></div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="section-gallery" class="panel">
+      <h2 class="panel-title">Photo Gallery</h2>
+      <div class="upload-hint">
+        <i class="fas fa-info-circle"></i>
+        <p>Place your image files in the <code>college-website/images/</code> folder, then add them below using the filename.</p>
+      </div>
+      <button class="btn-add" onclick="addGalleryRow()"><i class="fas fa-plus"></i> Add Photo</button>
+      <div class="drag-list" id="gallery-admin-list"></div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section id="section-marquee" class="panel">
+      <h2 class="panel-title">Marquee / Latest News Ticker</h2>
+      <p class="hint">One news item per line.</p>
+      <div class="form-group"><label>News Items (one per line)</label>
+        <textarea id="marquee-text" rows="10" placeholder="Admissions Open for 2025-26&#10;Annual Sports Day on 15th March&#10;..."></textarea>
+      </div>
+      <button class="btn-primary" onclick="saveMarquee()"><i class="fas fa-save"></i> Save Changes</button>
+    </section>
+
+    <!-- FOOTER LINKS -->
+    <section id="section-links" class="panel">
+      <h2 class="panel-title">Footer Important Links</h2>
+      <button class="btn-add" onclick="addLinkRow()"><i class="fas fa-plus"></i> Add Link</button>
+      <div class="drag-list" id="links-admin-list"></div>
+    </section>
+
+  </div><!-- /content-area -->
+</main>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()" id="modal-box">
+    <div class="modal-header"><h3 id="modal-title">Edit</h3><button onclick="closeModal()"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-footer"><button class="btn-primary" onclick="saveModal()">Save</button><button class="btn-ghost" onclick="closeModal()">Cancel</button></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="../data.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
