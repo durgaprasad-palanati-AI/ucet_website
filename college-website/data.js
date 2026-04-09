@@ -209,7 +209,7 @@ const COLLEGE_DATA = {
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Engineering",
       "qual": "B.Tech,M.Tech",
-      "photo": "images/Kalpana.webp"
+      "photo": "images/kalpana.webp"
     },
     {
       "name": "Dr. KANIGIRI BHARATHI",
