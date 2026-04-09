@@ -164,7 +164,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE),LMCSI,LMISTE",
       "photo": "images/Harish.webp",
-       "url":"Harish.html"
+       "url":"harish.html"
     },
     {
       "name": "Dr. Ch. Sudha Rani",
