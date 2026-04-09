@@ -11,7 +11,7 @@ const COLLEGE_DATA = {
     "tagline": "Nalgonda,Teleangana,India,508254",
     "phone": "+91 9948121110",
     "email": "principalucet_mgu@gmail.com",
-    "address": "Nalgonda, Telangana - 508001",
+    "address": "Nalgonda, Telangana - 508254",
     "hours": "Mon–Sat: 10:00 AM – 5:00 PM",
     "founded": "2013",
     "footerDesc": "Committed to academic excellence and holistic development since 2013."
