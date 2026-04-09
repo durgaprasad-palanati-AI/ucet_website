@@ -27,7 +27,12 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 
 /* ===== HEADER ===== */
 .header { background: var(--white); border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow); }
-.header-inner { max-width: 1200px; margin: auto; padding: 12px 20px; display: flex; align-items: center; gap: 20px; }
+.header-inner { max-width: 1200px; margin: auto; padding: 12px 20px; display: flex; justify-content: space-between;align-items: center; gap: 20px; }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 .logo-area { display: flex; align-items: center; gap: 14px; }
 .logo-circle { width: 72px; height: 72px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .logo-circle i { font-size: 32px; color: var(--accent); }
@@ -308,4 +313,9 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 
 .faculty-card:hover {
   transform: translateY(-5px);
+}
+.eamcet {
+  margin-left: auto;
+  font-weight: bold;
+  color: #e12020;
 }
