@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 8/4/2026, 8:04:56 pm
+//  Last updated: 9/4/2026, 12:39:13 pm
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -41,22 +41,16 @@ const COLLEGE_DATA = {
   },
   "about": {
     "para1": "The University College of Engineering & Technology, established in 2013 at Panagal, Nalgonda, is currently functioning from its full-fledged campus at Anneparthy, Nalgonda, with modern infrastructure and well-equipped laboratories. The institution is strategically located to provide accessible technical education to students from rural areas of the district.",
-
-"para2": "The college offers undergraduate B.Tech. programmes in three disciplines, aligned with global standards and focused on equipping students with the dynamic, industry-relevant skills essential for modern engineering.",
-
-"programs": [
-  "Computer Science and Engineering - 132 intake",
-  "Electronics and Communications Engineering - 66 intake",
-  "Electrical and Electronics Engineering - 66 intake"
-],
-
-"para3": "In addition, the college offers a Master of Computer Applications (MCA) two years course at PG level - 66 intake and Ph.D. Research Programme in Computer Science & Informatics. The total annual intake stands at 264 undergraduate and 66 postgraduate students.",
-
-"para4": "Established with the vision of imparting quality engineering education and promoting technological research, the institution focuses on developing skilled technical professionals across diverse domains.",
-
-"para5": "The campus is equipped with state-of-the-art laboratories, Wi-Fi connectivity, and CCTV surveillance in key areas such as computer laboratories, the library, and parking facilities, ensuring a secure and technology-enabled environment.",
-
-"para6": "The college places strong emphasis on skill development and career readiness through regular training programs and placement drives. These initiatives have enabled students to secure opportunities in reputed multinational companies such as Wipro, Deloitte, Accenture, Capgemini, and Tristate Solutions.",
+    "para2": "The college offers undergraduate B.Tech. programmes in three disciplines, aligned with global standards and focused on equipping students with the dynamic, industry-relevant skills essential for modern engineering.",
+    "programs": [
+      "Computer Science and Engineering - 132 intake",
+      "Electronics and Communications Engineering - 66 intake",
+      "Electrical and Electronics Engineering - 66 intake"
+    ],
+    "para3": "In addition, the college offers a Master of Computer Applications (MCA) two years course at PG level - 66 intake and Ph.D. Research Programme in Computer Science & Informatics. The total annual intake stands at 264 undergraduate and 66 postgraduate students.",
+    "para4": "Established with the vision of imparting quality engineering education and promoting technological research, the institution focuses on developing skilled technical professionals across diverse domains.",
+    "para5": "The campus is equipped with state-of-the-art laboratories, Wi-Fi connectivity, and CCTV surveillance in key areas such as computer laboratories, the library, and parking facilities, ensuring a secure and technology-enabled environment.",
+    "para6": "The college places strong emphasis on skill development and career readiness through regular training programs and placement drives. These initiatives have enabled students to secure opportunities in reputed multinational companies such as Wipro, Deloitte, Accenture, Capgemini, and Tristate Solutions.",
     "para7": "The institution remains committed to academic excellence, innovation, and the holistic development of future-ready engineers.",
     "highlights": [
       "NAAC B+ Accredited",
@@ -65,9 +59,7 @@ const COLLEGE_DATA = {
       "100% Wi-Fi Campus"
     ]
   },
-  
   "marquee": [
-    
     "Annual Sports Day on 15th April",
     "Placement Drive: TASK on 4th April",
     "NAAC Peer Team Visit soon",
@@ -132,7 +124,7 @@ const COLLEGE_DATA = {
       "dept": "Administration",
       "qual": "M.Tech., Ph.D-Italy, LMISTE.",
       "photo": "images/rekhamam.webp",
-      "url":"RRR.html"
+      "url": "RRR.html"
     },
     {
       "name": "Dr. M. Jayanthi",
@@ -140,7 +132,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech( CSE) ,PhD(CSE) OU",
       "photo": "images/Jayanthi.webp",
-      "url":"jayanthi.html"
+      "url": "jayanthi.html"
     },
     {
       "name": "Prof. R.Rekha",
@@ -148,7 +140,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech",
       "photo": "images/rekhamam.webp",
-       "url":"RRR.html"
+      "url": "RRR.html"
     },
     {
       "name": "Dr.D.Sandhya Rani",
@@ -156,7 +148,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "B.Tech(CSE),M.Tech(CSE),Ph.D.",
       "photo": "images/Sandhya.webp",
-      "url":"sandhya.html"
+      "url": "sandhya.html"
     },
     {
       "name": "Dr. K. Harish Kumar",
@@ -164,7 +156,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE),LMCSI,LMISTE",
       "photo": "images/Harish.webp",
-       "url":"harish.html"
+      "url": "harish.html"
     },
     {
       "name": "Dr. Ch. Sudha Rani",
@@ -172,7 +164,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE)",
       "photo": "images/Sudharani.webp",
-      "url":"sudharani.html"
+      "url": "sudharani.html"
     },
     {
       "name": "P. Durga Prasad",
@@ -180,7 +172,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Engineering",
       "qual": "B.TECH, M.TECH",
       "photo": "images/Durgaprasad.webp",
-      "url":"durgaprasad.html"
+      "url": "durgaprasad.html"
     },
     {
       "name": "Mrs. M.Jyothi Rani",
@@ -195,7 +187,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Engineering",
       "qual": "BTech(CSE),MTech(CSE)",
       "photo": "images/Swarnalatha.webp",
-      "url":"swarnalatha.html"
+      "url": "swarnalatha.html"
     },
     {
       "name": "Mrs. A. Rajeshwari",
@@ -372,6 +364,13 @@ const COLLEGE_DATA = {
   ],
   "events": [
     {
+      "date": "1st April",
+      "title": "TRAINING PROGRAM BY TASK",
+      "body": "15 days training program on AI&ML",
+      "link": "",
+      "isNew": true
+    },
+    {
       "date": "15 April",
       "title": "Annual Cultural Fest - yuva 2026",
       "body": "Two-day cultural extravaganza with competitions, performances and prize distribution.",
@@ -432,7 +431,7 @@ const COLLEGE_DATA = {
     "twitter": "#"
   },
   "cseDepartment": {
-  "heroSub": "CSE DEPARTMENT",
-  "heroTitle": "Welcome to the Computer Science Department"
-}
+    "heroSub": "CSE DEPARTMENT",
+    "heroTitle": "Welcome to the Computer Science Department"
+  }
 };
