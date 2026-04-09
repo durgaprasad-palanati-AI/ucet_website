@@ -27,14 +27,39 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 
 /* ===== HEADER ===== */
 .header { background: var(--white); border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow); }
-.header-inner { max-width: 1200px; margin: auto; padding: 12px 20px; display: flex; justify-content: space-between;align-items: center; gap: 20px; }
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.header-inner { max-width: 1200px; margin: auto; padding: 12px 20px; display: grid; grid-template-columns: auto 1fr auto;justify-content: space-between;align-items: center; gap: 20px;position: relative; }
+.header-right {  display: flex;  align-items: center;  gap: 15px;
 }
 .logo-area { display: flex; align-items: center; gap: 14px; }
 .logo-circle { width: 72px; height: 72px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+/* Left & Right logos */
+.logo-left img,
+.logo-right img {
+  width: 70px;
+  height: 90px;
+  object-fit: cover;
+}
+/* Left logo */
+.logo-left {
+  justify-self: start;
+}
+
+/* Center title */
+.title-center {
+  text-align: center;
+}
+
+/* Right logo */
+.logo-right {
+  justify-self: end;
+}
+
+.title-center h1 {
+  margin: auto;
+  font-size: 32px;
+  white-space: nowrap;
+  color: #19c22a;
+}
 .logo-circle i { font-size: 32px; color: var(--accent); }
 .college-name-area h1 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--primary); line-height: 1.2; }
 .college-name-area p { font-size: 13px; color: var(--primary-light); font-weight: 600; }

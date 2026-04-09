@@ -1,14 +1,14 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 9/4/2026, 12:39:13 pm
+//  Last updated: 9/4/2026, 7:36:08 pm
 // ============================================================
 
 const COLLEGE_DATA = {
   "info": {
     "name": "UNIVERSITY COLLEGE OF ENGINEERING AND TECHNOLOGY",
-    "tagline": "",
-    "affiliation": "Constituent college of Mahatma GAndhi University | NAAC B+ Accredited",
+    "affiliation": "Mahatma GAndhi University",
+    "tagline": "Nalgonda,Teleangana,India,508254",
     "phone": "+91 9948121110",
     "email": "principalucet_mgu@gmail.com",
     "address": "Nalgonda, Telangana - 508001",
@@ -363,6 +363,13 @@ const COLLEGE_DATA = {
     }
   ],
   "events": [
+    {
+      "date": "April 11",
+      "title": "Mahatma Jyotirao Phule birth anniversary",
+      "body": "The birth anniversary of social reformer Mahatma Jyotirao Phule on April 11 is celebrated as a state festival in Telangana.",
+      "link": "",
+      "isNew": true
+    },
     {
       "date": "1st April",
       "title": "TRAINING PROGRAM BY TASK",
