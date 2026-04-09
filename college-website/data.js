@@ -139,7 +139,7 @@ const COLLEGE_DATA = {
       "designation": "HOD - CSI",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech( CSE) ,PhD(CSE) OU",
-      "photo": "images/jayanthi.webp",
+      "photo": "images/Jayanthi.webp",
       "url":"jayanthi.html"
     },
     {
