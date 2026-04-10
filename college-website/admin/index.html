@@ -39,6 +39,8 @@
     <a href="#" class="nav-item" data-section="antiragging"><i class="fas fa-shield-alt"></i> Anti Ragging</a>
     <a href="#" class="nav-item" data-section="nssncc"><i class="fas fa-flag"></i> NSS & NCC</a>
     <a href="#" class="nav-item" data-section="facilities"><i class="fas fa-building"></i> Facilities</a>
+    <a href="#" class="nav-item" data-section="scholarships">
+                 <i class="fas fa-rupee-sign"></i> Scholarships</a>
     <hr style="border-color:#334155;margin:12px 0"/>
     <a href="../index.html" class="nav-item" target="_blank"><i class="fas fa-external-link-alt"></i> View Website</a>
     <a href="#" class="nav-item save-btn" onclick="saveAllData()"><i class="fas fa-download"></i> Export data.js</a>
@@ -198,7 +200,15 @@
       <button class="btn-add" onclick="addLinkRow()"><i class="fas fa-plus"></i> Add Link</button>
       <div class="drag-list" id="links-admin-list"></div>
     </section>
-
+    
+    <!-- Scholarship -->
+<section id="section-scholarships" class="panel">
+  <h2 class="panel-title">Scholarships</h2>
+  <button class="btn-add" onclick="addScholarship()">
+    <i class="fas fa-plus"></i> Add Scholarship
+  </button>
+  <div class="drag-list" id="scholarships-list"></div>
+</section>
   </div><!-- /content-area -->
 </main>
 

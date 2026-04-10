@@ -104,11 +104,11 @@ topBtn.onclick = function () {
   }
   renderFaculty('all');
 
-  // ── NOTICES / CIRCULARS / EVENTS ──
+  // ── NOTICES / CIRCULARS / EVENTS / scholatship──
   renderNotices('notices-list', d.notices);
   renderNotices('circulars-list', d.circulars);
   renderNotices('events-list', d.events);
-
+renderScholarships('scholarships-list', d.scholarships || []);
   // ── GALLERY ──
   const gGrid = document.getElementById('gallery-grid');
   if (gGrid) {
@@ -166,7 +166,7 @@ function renderFaculty(dept) {
     </div>`).join('');
 }
 window.filterFaculty = renderFaculty;
-
+// schloarship render function
 function renderNotices(listId, items) {
   const el = document.getElementById(listId);
   if (!el) return;
@@ -184,7 +184,42 @@ function renderNotices(listId, items) {
       </div>
     </li>`).join('');
 }
-
+// Inside renderAdditionalSections() function
+if (d.scholarships) {
+  const sg = document.getElementById('scholarships-grid');
+  if (sg) sg.innerHTML = d.scholarships.map(s => `
+    <div class="dept-card">
+      <div class="dept-icon"><i class="fas fa-rupee-sign"></i></div>
+      <h3>${s.name}</h3>
+      <p>${s.eligibility}</p>
+      <p style="font-size:12px;color:#999">Amount: ${s.amount} | Deadline: ${s.deadline}</p>
+      ${s.link ? `<a href="${s.link}" target="_blank" 
+        style="display:inline-block;margin-top:12px;padding:6px 16px;background:#1a3a6b;
+        color:white;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none">
+        Apply Now →</a>` : ''}
+    </div>`).join('');
+}
+function renderScholarships(listId, items) {
+  const el = document.getElementById(listId);
+  if (!el) return;
+  if (!items || items.length === 0) {
+    el.innerHTML = '<li style="padding:20px;color:#999;text-align:center">No scholarships added yet.</li>';
+    return;
+  }
+  el.innerHTML = items.map(s => `
+    <li>
+      <div class="notice-date">
+        <strong><i class="fas fa-rupee-sign"></i></strong>
+      </div>
+      <div class="notice-body">
+        <strong>${s.name}</strong>
+        <p>Eligibility: ${s.eligibility}</p>
+        <p>Amount: ${s.amount} &nbsp;|&nbsp; Deadline: ${s.deadline}</p>
+        ${s.link ? `<a href="${s.link}" target="_blank" class="notice-link">
+          <i class="fas fa-external-link-alt"></i> Apply Now</a>` : ''}
+      </div>
+    </li>`).join('');
+}
 function switchTab(listId, tabId) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));

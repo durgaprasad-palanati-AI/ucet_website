@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 9/4/2026, 7:36:08 pm
+//  Last updated: 10/4/2026, 8:20:34 am
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -440,5 +440,21 @@ const COLLEGE_DATA = {
   "cseDepartment": {
     "heroSub": "CSE DEPARTMENT",
     "heroTitle": "Welcome to the Computer Science Department"
-  }
+  },
+  "scholarships": [
+    {
+      "name": "SC/ST Scholarship 2026",
+      "amount": "₹20,000/year",
+      "eligibility": "SC/ST students",
+      "deadline": "31 May 2026",
+      "link": "https://telanganaepass.cgg.gov.in/"
+    },
+    {
+      "name": "Merit Scholarship 2026",
+      "amount": "₹10,000/year",
+      "eligibility": "Top 10% students",
+      "deadline": "30 July 2026",
+      "link": "https://scholarships.gov.in/"
+    }
+  ]
 };

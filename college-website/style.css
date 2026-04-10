@@ -64,7 +64,7 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 .college-name-area h1 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--primary); line-height: 1.2; }
 .college-name-area p { font-size: 13px; color: var(--primary-light); font-weight: 600; }
 .college-name-area small { font-size: 11px; color: var(--text-light); }
-.nav { margin-left: auto; display: flex; gap: 4px;  flex-wrap: nowrap;  }
+.nav { margin-left: auto; display: flex; gap: 4px;  flex-wrap: wrap;  }
 .nav a { color: var(--text); text-decoration: none; padding: 7px 12px; border-radius: 6px; font-size: 16px; font-weight: 600; transition: all 0.2s; white-space: nowrap;}
 .nav a:hover { background: var(--primary); color: var(--white); }
 .hamburger { display: none; font-size: 22px; cursor: pointer; color: var(--primary); }

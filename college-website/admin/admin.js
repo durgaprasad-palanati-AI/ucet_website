@@ -124,6 +124,7 @@ function renderAllLists() {
   renderNoticeList('events');
   renderGalleryList();
   renderLinksList();
+  renderScholarshipsList();  
 }
 
 // ── DEPARTMENTS ────────────────────────────────────────────
@@ -306,6 +307,72 @@ function editLink(idx) {
 window.editLink = editLink;
 window.deleteLink = (i) => { if (confirm('Delete?')) { DATA.footerLinks.splice(i, 1); renderLinksList(); toast('Deleted'); } };
 
+// ---scholarship
+
+// Render the list
+function renderScholarshipsList() {
+  const el = document.getElementById('scholarships-list');
+  const items = DATA.scholarships || [];
+  el.innerHTML = items.map((s, i) => `
+    <div class="drag-item">
+      <i class="fas fa-grip-vertical drag-handle"></i>
+      <div class="drag-item-info">
+        <strong>${s.name}</strong>
+        <small>${s.amount} — ${s.eligibility}</small>
+      </div>
+      <div class="drag-item-actions">
+        <button class="btn-edit" onclick="editScholarship(${i})">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button class="btn-del" onclick="deleteScholarship(${i})">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>`).join('');
+}
+
+// Open edit modal
+function editScholarship(idx) {
+  const s = idx >= 0 ? DATA.scholarships[idx]
+                     : { name:'', amount:'', eligibility:'', deadline:'',link:'' };
+  currentModal = { type: 'scholarship', idx };
+  openModal('Scholarship', `
+    <div class="form-group">
+      <label>Scholarship Name</label>
+      <input id="m-sname" type="text" value="${esc(s.name)}"/>
+    </div>
+    <div class="form-group">
+      <label>Amount</label>
+      <input id="m-samount" type="text" value="${esc(s.amount)}"/>
+    </div>
+    <div class="form-group">
+      <label>Eligibility</label>
+      <input id="m-selig" type="text" value="${esc(s.eligibility)}"/>
+    </div>
+    <div class="form-group">
+      <label>Application Deadline</label>
+      <input id="m-sdeadline" type="text" value="${esc(s.deadline)}"/>
+    </div>
+    <div class="form-group">
+      <label>Apply Link (URL)</label>
+      <input id="m-slink" type="text" value="${esc(s.link || '')}" placeholder="https://scholarships.gov.in"/>
+    </div>
+    `);
+}
+window.addScholarship = () => editScholarship(-1);
+window.editScholarship = editScholarship;
+window.deleteScholarship = (i) => {
+  if (confirm('Delete?')) {
+    DATA.scholarships.splice(i, 1);
+    renderScholarshipsList();
+    toast('Deleted');
+  }
+};
+
+// Handle save from modal (add this inside the saveModal if-else chain)
+// In the existing saveModal function, add:
+
+
 // ── MODAL ──────────────────────────────────────────────────
 function openModal(title, html) {
   document.getElementById('modal-title').textContent = title;
@@ -341,6 +408,19 @@ function saveModal() {
     if (idx < 0) DATA.footerLinks.push(obj); else DATA.footerLinks[idx] = obj;
     renderLinksList();
   }
+  else if (type === 'scholarship') {
+  const obj = {
+    name: getVal('m-sname'),
+    amount: getVal('m-samount'),
+    eligibility: getVal('m-selig'),
+    deadline: getVal('m-sdeadline'),
+    link: getVal('m-slink')
+  };
+  if (!DATA.scholarships) DATA.scholarships = [];
+  if (idx < 0) DATA.scholarships.push(obj);
+  else DATA.scholarships[idx] = obj;
+  renderScholarshipsList();
+}
   closeModal();
   toast('Saved successfully!');
 }
