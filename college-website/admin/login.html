@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login — College Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --success: #22c55e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-image: radial-gradient(ellipse at 20% 50%, rgba(59,130,246,0.07) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(245,158,11,0.05) 0%, transparent 50%);
+    }
+
+    .login-wrap {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .login-logo {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 32px;
+      color: var(--accent);
+    }
+
+    .login-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .login-header p {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .login-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    /* STEPS */
+    .step { display: none; }
+    .step.active { display: block; animation: fadeIn 0.25s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .step-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: all 0.3s;
+    }
+    .step-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+    .step-dot.done { background: var(--success); }
+
+    .step-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .step-sub {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+    .step-sub span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* FORM */
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 7px;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+    .input-wrap i {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      font-size: 14px;
+    }
+    .input-wrap input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 14px 11px 38px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+    .input-wrap input:focus { outline: none; border-color: var(--primary); }
+    .input-wrap input.error { border-color: var(--danger); }
+
+    .toggle-password {
+      position: absolute;
+      right: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-light);
+      cursor: pointer;
+      font-size: 14px;
+      padding: 0;
+    }
+
+    /* OTP INPUT */
+    .otp-inputs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 8px 0;
+    }
+    .otp-inputs input {
+      width: 48px;
+      height: 54px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+    }
+    .otp-inputs input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(59,130,246,0.07);
+    }
+    .otp-inputs input.filled { border-color: var(--primary); }
+
+    .btn-primary {
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+    .btn-primary:hover:not(:disabled) { background: var(--primary-hover); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .btn-ghost {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      padding: 11px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-ghost:hover { border-color: var(--text-light); color: var(--text); }
+
+    /* ERROR / SUCCESS MSG */
+    .msg {
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 7px;
+      margin-bottom: 14px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+    .msg.show { display: flex; }
+    .msg.error { background: rgba(239,68,68,0.12); color: #fca5a5; border: 1px solid rgba(239,68,68,0.25); }
+    .msg.success { background: rgba(34,197,94,0.12); color: #86efac; border: 1px solid rgba(34,197,94,0.25); }
+    .msg.info { background: rgba(59,130,246,0.12); color: #93c5fd; border: 1px solid rgba(59,130,246,0.25); }
+
+    /* RESEND */
+    .resend-row {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .resend-btn {
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0;
+    }
+    .resend-btn:disabled { color: var(--text-light); cursor: not-allowed; }
+
+    /* TIMER */
+    .timer {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    /* SPINNER */
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+    .spinner.show { display: block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* SUCCESS STATE */
+    .success-icon {
+      width: 64px; height: 64px;
+      background: rgba(34,197,94,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 28px;
+      color: var(--success);
+    }
+
+    /* SETUP NOTICE */
+    .setup-notice {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #fcd34d;
+      line-height: 1.6;
+    }
+    .setup-notice strong { display: block; margin-bottom: 4px; color: var(--accent); }
+    .setup-notice a { color: var(--primary); }
+
+    .back-to-site {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .back-to-site a {
+      font-size: 13px;
+      color: var(--text-light);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-to-site a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<div class="login-wrap">
+
+  <div class="login-header">
+    <div class="login-logo"><i class="fas fa-university"></i></div>
+    <h1>Admin Panel</h1>
+    <p>College Website Management</p>
+  </div>
+
+  <div class="login-card">
+
+    <!-- Step indicators -->
+    <div class="step-indicator">
+      <div class="step-dot active" id="dot-1"></div>
+      <div class="step-dot" id="dot-2"></div>
+      <div class="step-dot" id="dot-3"></div>
+    </div>
+
+    <!-- ── STEP 1: Username & Password ── -->
+    <div class="step active" id="step-1">
+      <div class="step-title">Welcome Back</div>
+      <div class="step-sub">Enter your admin credentials</div>
+
+      <div id="msg-1" class="msg error"><i class="fas fa-exclamation-circle"></i><span></span></div>
+
+      <div class="form-group">
+        <label>Username</label>
+        <div class="input-wrap">
+          <i class="fas fa-user"></i>
+          <input type="text" id="inp-username" placeholder="Enter username" autocomplete="off"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-wrap">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="inp-password" placeholder="Enter password"/>
+          <button class="toggle-password" onclick="togglePwd()" type="button" tabindex="-1">
+            <i class="fas fa-eye" id="pwd-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="checkCredentials()" id="btn-login">
+        <span>Continue</span>
+        <div class="spinner" id="spin-1"></div>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <!-- ── STEP 2: OTP ── -->
+    <div class="step" id="step-2">
+      <div class="step-title">Check Your Email</div>
+      <div class="step-sub">OTP sent to <span id="otp-email-display"></span></div>
+
+      <div id="msg-2" class="msg"><i class="fas fa-info-circle"></i><span></span></div>
+
+      <div class="otp-inputs">
+        <input type="text" maxlength="1" class="otp-box" id="otp-0" oninput="otpInput(0)" onkeydown="otpKeydown(event,0)"/>
+        <input type="text" maxlength="1" class="otp-box" id="otp-1" oninput="otpInput(1)" onkeydown="otpKeydown(event,1)"/>
+        <input type="text" maxlength="1" class="otp-box" id="otp-2" oninput="otpInput(2)" onkeydown="otpKeydown(event,2)"/>
+        <input type="text" maxlength="1" class="otp-box" id="otp-3" oninput="otpInput(3)" onkeydown="otpKeydown(event,3)"/>
+        <input type="text" maxlength="1" class="otp-box" id="otp-4" oninput="otpInput(4)" onkeydown="otpKeydown(event,4)"/>
+        <input type="text" maxlength="1" class="otp-box" id="otp-5" oninput="otpInput(5)" onkeydown="otpKeydown(event,5)"/>
+      </div>
+
+      <button class="btn-primary" onclick="verifyOTP()" id="btn-verify" style="margin-top:20px">
+        <span>Verify OTP</span>
+        <div class="spinner" id="spin-2"></div>
+      </button>
+
+      <div class="resend-row">
+        <span id="resend-msg">Resend OTP in <span class="timer" id="timer-display">60s</span></span>
+        <button class="resend-btn" id="resend-btn" onclick="resendOTP()" disabled>Resend OTP</button>
+      </div>
+
+      <button class="btn-ghost" onclick="goToStep(1)">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+    </div>
+
+    <!-- ── STEP 3: Success ── -->
+    <div class="step" id="step-3">
+      <div class="success-icon"><i class="fas fa-check"></i></div>
+      <div class="step-title" style="text-align:center">Login Successful!</div>
+      <div class="step-sub" style="text-align:center">Redirecting to Admin Panel...</div>
+      <div style="background:var(--bg);border-radius:8px;padding:12px 16px;text-align:center;font-size:13px;color:var(--text-light)">
+        <i class="fas fa-spinner fa-spin" style="margin-right:6px;color:var(--primary)"></i>
+        Please wait...
+      </div>
+    </div>
+
+  </div><!-- /login-card -->
+
+  <div class="back-to-site">
+    <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Website</a>
+  </div>
+
+</div>
+
+<!-- ============================================================
+  CONFIGURATION — EDIT THESE VALUES
+  ============================================================ -->
+<script>
+// ── ADMIN CREDENTIALS ──────────────────────────────────────
+// Change these to your own username and password
+const ADMIN_USERNAME = "admin";
+const ADMIN_PASSWORD = "college@123";
+
+// ── ADMIN EMAIL (OTP will be sent here) ───────────────────
+const ADMIN_EMAIL = "dp.cse5@gmail.com";  // ← CHANGE THIS
+
+// ── EMAILJS CONFIGURATION ─────────────────────────────────
+// Step 1: Sign up free at https://www.emailjs.com
+// Step 2: Create an Email Service (Gmail recommended)
+// Step 3: Create an Email Template with these variables:
+//         {{otp}}  {{to_email}}  {{college_name}}
+// Step 4: Replace the values below
+
+const EMAILJS_PUBLIC_KEY  = "Kj-N4WTMcSEQFoyQ7";   // ← from EmailJS dashboard
+const EMAILJS_SERVICE_ID  = "service_asbs6bu";   // ← e.g. service_xxxxxxx
+const EMAILJS_TEMPLATE_ID = "template_ey249fu";  // ← e.g. template_xxxxxxx
+
+// ── SESSION TIMEOUT (minutes) ─────────────────────────────
+const SESSION_TIMEOUT_MINUTES = 60;
+
+</script>
+<!-- ============================================================
+  LOGIN LOGIC
+  ============================================================ -->
+<script>
+  // Initialize EmailJS
+  
+
+  let generatedOTP = null;
+  let otpExpiry = null;
+  let timerInterval = null;
+  let resendCountdown = null;
+
+  // ── CHECK CREDENTIALS ────────────────────────────────────
+  async function checkCredentials() {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+    const username = document.getElementById('inp-username').value.trim();
+    const password = document.getElementById('inp-password').value.trim();
+
+    clearMsg(1);
+
+    if (!username || !password) {
+      showMsg(1, 'error', 'Please enter username and password.');
+      return;
+    }
+
+    if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
+      showMsg(1, 'error', 'Invalid username or password.');
+      document.getElementById('inp-password').classList.add('error');
+      return;
+    }
+
+    // Credentials correct — send OTP
+    setLoading('btn-login', 'spin-1', true);
+
+    const otp = generateOTP();
+    generatedOTP = otp;
+    otpExpiry = Date.now() + 5 * 60 * 1000; // 5 min expiry
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        to_email:    ADMIN_EMAIL,
+        otp:         otp,
+        college_name: document.title.replace(' — College Website','') || 'College Admin',
+        time:        new Date().toLocaleTimeString()
+      });
+
+      setLoading('btn-login', 'spin-1', false);
+      document.getElementById('otp-email-display').textContent = maskEmail(ADMIN_EMAIL);
+      goToStep(2);
+      startResendTimer();
+      document.getElementById('otp-0').focus();
+
+    } catch (err) {
+      setLoading('btn-login', 'spin-1', false);
+      showMsg(1, 'error', 'Failed to send OTP. Check your EmailJS setup. Error: ' + (err.text || err.message || err));
+      console.error('EmailJS error:', err);
+    }
+  }
+
+  // ── VERIFY OTP ───────────────────────────────────────────
+  function verifyOTP() {
+    const entered = Array.from({length:6}, (_,i) =>
+      document.getElementById(`otp-${i}`).value).join('');
+
+    clearMsg(2);
+
+    if (entered.length < 6) {
+      showMsg(2, 'error', 'Please enter the complete 6-digit OTP.');
+      return;
+    }
+
+    if (Date.now() > otpExpiry) {
+      showMsg(2, 'error', 'OTP has expired. Please request a new one.');
+      return;
+    }
+
+    if (entered !== generatedOTP) {
+      showMsg(2, 'error', 'Incorrect OTP. Please try again.');
+      Array.from({length:6}, (_,i) => {
+        document.getElementById(`otp-${i}`).value = '';
+      });
+      document.getElementById('otp-0').focus();
+      return;
+    }
+
+    // ✅ OTP correct
+    setLoading('btn-verify', 'spin-2', true);
+    goToStep(3);
+    clearInterval(timerInterval);
+    clearInterval(resendCountdown);
+
+    // Set session
+    const expiry = Date.now() + SESSION_TIMEOUT_MINUTES * 60 * 1000;
+    sessionStorage.setItem('admin_auth', 'true');
+    sessionStorage.setItem('admin_expiry', expiry.toString());
+
+    // Redirect after 1.5s
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1500);
+  }
+
+  // ── RESEND OTP ───────────────────────────────────────────
+  async function resendOTP() {
+    document.getElementById('resend-btn').disabled = true;
+    clearMsg(2);
+    showMsg(2, 'info', 'Sending new OTP...');
+
+    const otp = generateOTP();
+    generatedOTP = otp;
+    otpExpiry = Date.now() + 5 * 60 * 1000;
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        to_email:    ADMIN_EMAIL,
+        otp:         otp,
+        college_name: 'College Admin',
+        time:        new Date().toLocaleTimeString()
+      });
+      showMsg(2, 'success', 'New OTP sent to your email!');
+      startResendTimer();
+      Array.from({length:6}, (_,i) => document.getElementById(`otp-${i}`).value = '');
+      document.getElementById('otp-0').focus();
+    } catch(err) {
+      showMsg(2, 'error', 'Failed to resend OTP. Try again.');
+    }
+  }
+  window.resendOTP = resendOTP;
+
+  // ── OTP INPUT HELPERS ────────────────────────────────────
+  function otpInput(idx) {
+    const el = document.getElementById(`otp-${idx}`);
+    el.value = el.value.replace(/\D/g,''); // numbers only
+    if (el.value && idx < 5) document.getElementById(`otp-${idx+1}`).focus();
+    el.classList.toggle('filled', !!el.value);
+  }
+  window.otpInput = otpInput;
+
+  function otpKeydown(e, idx) {
+    if (e.key === 'Backspace' && !document.getElementById(`otp-${idx}`).value && idx > 0) {
+      document.getElementById(`otp-${idx-1}`).focus();
+    }
+    if (e.key === 'Enter') verifyOTP();
+  }
+  window.otpKeydown = otpKeydown;
+
+  // ── RESEND TIMER ─────────────────────────────────────────
+  function startResendTimer() {
+    let secs = 60;
+    document.getElementById('resend-msg').style.display = 'inline';
+    document.getElementById('resend-btn').style.display = 'none';
+    document.getElementById('resend-btn').disabled = true;
+
+    clearInterval(resendCountdown);
+    resendCountdown = setInterval(() => {
+      secs--;
+      document.getElementById('timer-display').textContent = secs + 's';
+      if (secs <= 0) {
+        clearInterval(resendCountdown);
+        document.getElementById('resend-msg').style.display = 'none';
+        document.getElementById('resend-btn').style.display = 'inline';
+        document.getElementById('resend-btn').disabled = false;
+      }
+    }, 1000);
+  }
+
+  // ── STEP NAVIGATION ──────────────────────────────────────
+  function goToStep(n) {
+    document.querySelectorAll('.step').forEach((s,i) => s.classList.toggle('active', i+1===n));
+    document.querySelectorAll('.step-dot').forEach((d,i) => {
+      d.classList.remove('active','done');
+      if (i+1 === n) d.classList.add('active');
+      else if (i+1 < n) d.classList.add('done');
+    });
+  }
+  window.goToStep = goToStep;
+
+  // ── HELPERS ──────────────────────────────────────────────
+  function generateOTP() {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+  }
+
+  function maskEmail(email) {
+    const [user, domain] = email.split('@');
+    return user.slice(0,2) + '***@' + domain;
+  }
+
+  function togglePwd() {
+    const inp = document.getElementById('inp-password');
+    const eye = document.getElementById('pwd-eye');
+    if (inp.type === 'password') {
+      inp.type = 'text';
+      eye.className = 'fas fa-eye-slash';
+    } else {
+      inp.type = 'password';
+      eye.className = 'fas fa-eye';
+    }
+  }
+  window.togglePwd = togglePwd;
+
+  function setLoading(btnId, spinId, loading) {
+    document.getElementById(btnId).disabled = loading;
+    document.getElementById(spinId).classList.toggle('show', loading);
+  }
+
+  function showMsg(step, type, text) {
+    const el = document.getElementById(`msg-${step}`);
+    el.className = `msg ${type} show`;
+    el.querySelector('span').textContent = text;
+    el.querySelector('i').className = type === 'error' ? 'fas fa-exclamation-circle' :
+                                       type === 'success' ? 'fas fa-check-circle' : 'fas fa-info-circle';
+  }
+
+  function clearMsg(step) {
+    const el = document.getElementById(`msg-${step}`);
+    el.classList.remove('show');
+    document.querySelectorAll('.otp-box, #inp-password, #inp-username')
+      .forEach(i => i.classList.remove('error'));
+  }
+
+  // ── ENTER KEY on step 1 ──────────────────────────────────
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      if (document.getElementById('step-1').classList.contains('active')) checkCredentials();
+      if (document.getElementById('step-2').classList.contains('active')) verifyOTP();
+    }
+  });
+
+  // ── CHECK IF ALREADY LOGGED IN ───────────────────────────
+  window.addEventListener('load', () => {
+    const auth = sessionStorage.getItem('admin_auth');
+    const expiry = parseInt(sessionStorage.getItem('admin_expiry') || '0');
+    if (auth === 'true' && Date.now() < expiry) {
+      window.location.href = 'index.html';
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 10/4/2026, 8:20:34 am
+//  Last updated: 10/4/2026, 8:40:45 am
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -407,6 +407,10 @@ const COLLEGE_DATA = {
     {
       "url": "images/projectexpo.jpeg",
       "caption": "Project Expo-2025"
+    },
+    {
+      "url": "images/expo2.webp",
+      "caption": "Project expo"
     }
   ],
   "footerLinks": [
