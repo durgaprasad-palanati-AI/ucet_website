@@ -56,9 +56,15 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 
 .title-center h1 {
   margin: auto;
-  font-size: 32px;
+  font-size: 40px;
   white-space: nowrap;
   color: #19c22a;
+}
+.title-center h2 {
+  margin: auto;
+  font-size: 30px;
+  white-space: nowrap;
+  color: #2e10c7;
 }
 .logo-circle i { font-size: 32px; color: var(--accent); }
 .college-name-area h1 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--primary); line-height: 1.2; }
@@ -543,5 +549,16 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 .eamcet {
   margin-left: auto;
   font-weight: bold;
-  color: #e12020;
+  color: #ffffff;
+  background-color: #e12020;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.eamcet:hover {
+  background-color: #b10f0f;
+  transform: scale(1.05);
+  cursor: pointer;
 }

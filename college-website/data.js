@@ -516,7 +516,7 @@ const COLLEGE_DATA = {
       "type": "Industry MOU",
       "purpose": "Internships & Placements",
       "year": "2022",
-      "logo": "",
+      "logo": "images/tcs.jpeg",
       "description": "MOU signed with TCS to provide internship opportunities, placement support and industry exposure for final year students.",
       "benefits": [
         "Campus recruitment drives",
@@ -532,7 +532,7 @@ const COLLEGE_DATA = {
       "type": "Academic MOU",
       "purpose": "Azure Cloud Training",
       "year": "2023",
-      "logo": "",
+      "logo": "images/microsoft.jpeg",
       "description": "Partnership with Microsoft to provide Azure cloud computing training and certification support to students and faculty.",
       "benefits": [
         "Free Azure credits for students",
@@ -548,7 +548,7 @@ const COLLEGE_DATA = {
       "type": "Industry MOU",
       "purpose": "Skill Development",
       "year": "2021",
-      "logo": "",
+      "logo": "images/nasscomm.jpeg",
       "description": "Collaboration with NASSCOM for industry-aligned skill development programs to enhance student employability.",
       "benefits": [
         "Skill assessment programs",
@@ -564,7 +564,7 @@ const COLLEGE_DATA = {
       "type": "Academic MOU",
       "purpose": "Research Collaboration",
       "year": "2022",
-      "logo": "",
+      "logo": "images/iith.png",
       "description": "Research collaboration MOU with IIT Hyderabad for joint research projects, faculty exchange and student internships.",
       "benefits": [
         "Joint research projects",
@@ -587,7 +587,7 @@ const COLLEGE_DATA = {
         "Campus recruitment drives",
         "Internship programs"
       ],
-      "doc_link": "images/moi.png"
+      "doc_link": ""
     }
   ]
 };
