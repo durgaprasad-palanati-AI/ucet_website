@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 12/4/2026, 11:46:43 pm
+//  Last updated: 13/4/2026, 1:55:58 am
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -55,7 +55,7 @@ const COLLEGE_DATA = {
       "src": "images/expo2.webp",
       "caption": "Technical Exhibition"
     },
-        {
+    {
       "type": "image",
       "src": "images/ground.webp",
       "caption": "Play Ground"
@@ -77,13 +77,13 @@ const COLLEGE_DATA = {
       "playInPage": true,
       "caption": "Explore UCET"
     },
-      {
+    {
       "type": "video",
       "src": "",
       "thumbnail": "images/college.jpeg",
       "playInPage": false,
       "caption": "Explore campus in youtube",
-      "link":"https://www.youtube.com/watch?v=-4cj29ivn88"
+      "link": "https://www.youtube.com/watch?v=-4cj29ivn88"
     }
   ],
   "about": {
@@ -361,6 +361,13 @@ const COLLEGE_DATA = {
       "dept": "Mechanical Engineering (Interdisciplinary)",
       "qual": "B.Tech(Mech), M.Tech(CAD/CAM), (Ph.D)",
       "photo": "images/Ashwini.bmp"
+    },
+    {
+      "name": "D. SRINIVAS",
+      "designation": "Assistant Professor",
+      "dept": "Mechanical Engineering (Interdisciplinary)",
+      "qual": "B.Tech(Mech), M.Tech(MD)",
+      "photo": "images/dsr.webp"
     }
   ],
   "notices": [

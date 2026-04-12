@@ -17,6 +17,9 @@
     <span><i class="fas fa-phone"></i> <span id="topbar-phone">+91 99481211100</span></span>
     <span><i class="fas fa-envelope"></i> <span id="topbar-email">principalucet_mgu@gmail.com</span></span>
     <span><i class="fas fa-map-marker-alt"></i> <span id="topbar-address">Nalgonda, Telangana</span></span>
+     <div class="topbar-left">
+    <div class="topbar-time" id="topbar-time"></div> 
+    </div>
     <a href="admin/login.html" class="admin-link"><i class="fas fa-cog"></i> Admin Login</a>
   </div>
 </div>
@@ -34,7 +37,8 @@
         <h1 id="college-name">University College of Engineering AND Technology</h1>
         
         <h2 id="college-affiliation">Mahatma Gandhi University</h2>
-        <p id="college-tagline"> Nalgonda,Teleangana,India,508254</p>
+        <div class="college-tagline"><p id="college-tagline"> Nalgonda,Teleangana,India,508254</p></div>
+        
       </div>
       <div class="logo-right">
       <img src="images/telangana_rising.png" alt="Telangana Logo">
@@ -305,6 +309,81 @@
 
 <script src="data.js"></script>
 <script src="main.js"></script>
+<script>
+  /* =========================
+   CLOCK + DATE + TIMEZONE
+========================= */
+function updateTopbarClock() {
+  const now = new Date();
+
+  // TIME
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+  const ampm = hours >= 12 ? "PM" : "AM";
+
+  hours = hours % 12 || 12;
+
+  const time = `${hours.toString().padStart(2, "0")}:${minutes}:${seconds} ${ampm}`;
+
+  // DATE
+  const day = now.getDate();
+  const month = now.toLocaleString("en-US", { month: "long" });
+  const year = now.getFullYear();
+
+  const suffix =
+    day % 10 === 1 && day !== 11 ? "st" :
+    day % 10 === 2 && day !== 12 ? "nd" :
+    day % 10 === 3 && day !== 13 ? "rd" : "th";
+
+  const date = `${day}${suffix}, ${month}, ${year}`;
+
+  // TIMEZONE
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const shortTZ = tz.split("/").pop().replace("_", " ");
+
+  document.getElementById("topbar-time").innerHTML = `
+    <span class="clock-time">${time}</span>
+    <span class="blink">:</span>
+    <span class="clock-date">${date}</span>
+    <span class="clock-tz">(${shortTZ})</span>
+  `;
+}
+
+setInterval(updateTopbarClock, 1000);
+updateTopbarClock();
+
+
+/* =========================
+   AUTO DARK / LIGHT MODE
+========================= */
+function applyThemeByTime() {
+  const hour = new Date().getHours();
+  const isNight = hour >= 18 || hour < 6;
+
+  document.body.classList.toggle("dark-mode", isNight);
+  document.body.classList.toggle("light-mode", !isNight);
+}
+
+applyThemeByTime();
+setInterval(applyThemeByTime, 60000);
+
+
+/* =========================
+   MOBILE ADJUSTMENT
+========================= */
+function adjustForMobile() {
+  const isMobile = window.innerWidth < 768;
+  const el = document.getElementById("topbar-time");
+
+  if (!el) return;
+
+  el.classList.toggle("compact", isMobile);
+}
+
+window.addEventListener("resize", adjustForMobile);
+adjustForMobile();
+</script>
 <button id="goTopBtn" title="Go to top">↑</button>
 </body>
 </html>
