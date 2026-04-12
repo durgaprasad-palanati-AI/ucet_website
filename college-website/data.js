@@ -460,5 +460,165 @@ const COLLEGE_DATA = {
       "deadline": "30 July 2026",
       "link": "https://scholarships.gov.in/"
     }
+  ],
+  "research": {
+    
+    "intro": "Our college promotes research and innovation across all departments. Faculty and students actively contribute to national and international research.",
+ "highlights": [
+    "10 funded research projects",
+    "6 patents filed",
+    "50+ publications per year",
+    "Collaboration with DRDO, ISRO & industry"
+  ],
+  "projects": [
+    { title: "AI in Healthcare", dept: "CSE", funding: "DST", amount: "₹15 Lakhs", status: "Ongoing" },
+    { title: "Smart Grid Systems", dept: "Electrical", funding: "AICTE", amount: "₹10 Lakhs", status: "Ongoing" }
+  ]
+}
+};
+// ── ADDITIONAL SECTIONS (appended) ──────────────────────
+
+
+COLLEGE_DATA.tpc = {
+  intro: "The Training & Placement Cell bridges the gap between academia and industry. We conduct training programs, mock interviews, and coordinate campus recruitment.",
+  officer: "Dr. T. Placement Officer",
+  officer_email: "tpc@college.edu.in",
+  officer_phone: "+91 98765 00001",
+  stats: [
+    { num: "95%", label: "Placement Rate" },
+    { num: "150+", label: "Companies" },
+    { num: "₹6.5 LPA", label: "Avg Package" },
+    { num: "₹18 LPA", label: "Highest Package" }
+  ],
+  companies: ["TCS", "Infosys", "Wipro", "HCL", "Tech Mahindra", "Capgemini", "Accenture", "IBM"],
+  activities: [
+    "Aptitude Training",
+    "Soft Skills & Communication",
+    "Mock Interviews & GDs",
+    "Resume Building Workshops",
+    "Industry Expert Talks"
   ]
 };
+
+COLLEGE_DATA.mous = [
+  {
+    org: "Tata Consultancy Services",
+    type: "Industry MOU",
+    purpose: "Internships & Placements",
+    year: "2022",
+    logo: "",
+    description: "MOU signed with TCS to provide internship opportunities, placement support and industry exposure for final year students.",
+    benefits: ["Campus recruitment drives", "Internship programs", "Industry mentorship", "Technical training"],
+    duration: "3 Years",
+    doc_link: ""
+  },
+  {
+    org: "Microsoft",
+    type: "Academic MOU",
+    purpose: "Azure Cloud Training",
+    year: "2023",
+    logo: "",
+    description: "Partnership with Microsoft to provide Azure cloud computing training and certification support to students and faculty.",
+    benefits: ["Free Azure credits for students", "Faculty development programs", "Certification courses", "Access to Microsoft tools"],
+    duration: "2 Years",
+    doc_link: ""
+  },
+  {
+    org: "NASSCOM",
+    type: "Industry MOU",
+    purpose: "Skill Development",
+    year: "2021",
+    logo: "",
+    description: "Collaboration with NASSCOM for industry-aligned skill development programs to enhance student employability.",
+    benefits: ["Skill assessment programs", "Industry connect sessions", "FutureSkills platform access", "Digital literacy training"],
+    duration: "3 Years",
+    doc_link: ""
+  },
+  {
+    org: "IIT Hyderabad",
+    type: "Academic MOU",
+    purpose: "Research Collaboration",
+    year: "2022",
+    logo: "",
+    description: "Research collaboration MOU with IIT Hyderabad for joint research projects, faculty exchange and student internships.",
+    benefits: ["Joint research projects", "Faculty exchange program", "Student research internships", "Access to advanced labs"],
+    duration: "5 Years",
+    doc_link: ""
+  }
+];
+
+COLLEGE_DATA.alumni = {
+  intro: "Our alumni are our pride. They are making a difference in industries, academia, and entrepreneurship across the globe.",
+  stats: [
+    { num: "10,000+", label: "Alumni Worldwide" },
+    { num: "50+", label: "Entrepreneurs" },
+    { num: "200+", label: "in Fortune 500" }
+  ],
+  notable: [
+    { name: "Alumni Name 1", batch: "2010", company: "Google, USA", role: "Senior Engineer" },
+    { name: "Alumni Name 2", batch: "2012", company: "Microsoft", role: "Product Manager" },
+    { name: "Alumni Name 3", batch: "2015", company: "Startup Founder", role: "CEO" }
+  ],
+  association_email: "alumni@college.edu.in"
+};
+
+COLLEGE_DATA.antiragging = {
+  intro: "Ragging in any form is strictly prohibited in our college campus. We are committed to providing a safe and respectful environment for all students.",
+  committee_chair: "Dr. Principal",
+  helpline: "1800-180-5522 (UGC Toll Free)",
+  college_helpline: "+91 98765 11111",
+  email: "antiragging@college.edu.in",
+  members: [
+    { name: "Dr. Principal", role: "Chairman" },
+    { name: "Prof. Dean Students", role: "Member" },
+    { name: "Dr. Hostel Warden", role: "Member" },
+    { name: "Student Representative", role: "Student Member" }
+  ],
+  pledge: "We the students of this institution solemnly affirm that we will not indulge in any act of ragging.",
+  rules: [
+    "Ragging is a punishable offence under UGC regulations",
+    "Complaint can be filed at anti-ragging helpline 1800-180-5522",
+    "Strict disciplinary action including expulsion will be taken",
+    "CCTV surveillance across campus 24x7"
+  ]
+};
+
+COLLEGE_DATA.nssncc = {
+  nss: {
+    intro: "The National Service Scheme (NSS) unit of our college has been actively involved in community service, social awareness programs, and national integration activities.",
+    officer: "Dr. NSS Programme Officer",
+    strength: "200+ Volunteers",
+    activities: [
+      "Blood Donation Camps",
+      "Tree Plantation Drives",
+      "Village Adoption Program",
+      "Swachh Bharat Activities",
+      "Disaster Relief Camps",
+      "Health & Hygiene Awareness"
+    ]
+  },
+  ncc: {
+    intro: "The National Cadet Corps (NCC) unit instills discipline, leadership and patriotism among students through training and service activities.",
+    officer: "Lt. NCC Officer",
+    strength: "100+ Cadets",
+    wing: "Army Wing",
+    activities: [
+      "Annual Training Camps",
+      "Republic Day Parade",
+      "Social Service Activities",
+      "Adventure Activities",
+      "Leadership Training"
+    ]
+  }
+};
+
+COLLEGE_DATA.facilities = [
+  { name: "Central Library", icon: "fas fa-book", desc: "Over 50,000 books, e-journals, and digital resources. Open 8 AM – 8 PM." },
+  { name: "Computer Labs", icon: "fas fa-desktop", desc: "6 labs with 600+ systems, high-speed internet, latest software." },
+  { name: "Hostels", icon: "fas fa-home", desc: "Separate hostels for boys and girls with all modern amenities." },
+  { name: "Cafeteria", icon: "fas fa-utensils", desc: "Hygienic food, multiple cuisines, subsidized rates for students." },
+  { name: "Sports Complex", icon: "fas fa-running", desc: "Cricket, football, basketball, volleyball, indoor games & gym." },
+  { name: "Auditorium", icon: "fas fa-theater-masks", desc: "1000-seat air-conditioned auditorium for events and seminars." },
+  { name: "Medical Center", icon: "fas fa-heartbeat", desc: "On-campus medical facility with resident doctor and ambulance." },
+  { name: "Wi-Fi Campus", icon: "fas fa-wifi", desc: "High-speed 1 Gbps Wi-Fi available across all campus buildings." }
+];

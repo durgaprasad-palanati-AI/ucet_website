@@ -3,12 +3,14 @@
 // ============================================================
 
 // Local working copy of data
-let DATA = JSON.parse(JSON.stringify(COLLEGE_DATA));
+let DATA = {};
+
 let currentModal = { type: null, idx: null };
 let dragSrc = null;
 
 // ── INIT ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  DATA = JSON.parse(JSON.stringify(COLLEGE_DATA));
   populateForms();
   renderAllLists();
   updateDashboardCounts();
