@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Panel — College Website</title>
@@ -57,7 +60,7 @@
     <div class="topbar-actions">
       <button class="btn-save" onclick="saveAllData()"><i class="fas fa-download"></i> Export & Save</button>
       <a href="../index.html" target="_blank" class="btn-preview"><i class="fas fa-eye"></i> Preview</a>
-      <button onclick="logout()" class="btn-ghost">
+      <button onclick="logout()" class="btn-ghost"> 
   <i class="fas fa-sign-out-alt"></i> Logout
 </button>
     </div>
@@ -205,28 +208,23 @@
     </section>
     
     <!-- Scholarship -->
-<section id="section-scholarships" class="panel">
+    <section id="section-scholarships" class="panel">
   <h2 class="panel-title">Scholarships</h2>
   <button class="btn-add" onclick="addScholarship()">
     <i class="fas fa-plus"></i> Add Scholarship
   </button>
   <div class="drag-list" id="scholarships-list"></div>
-</section>
-  </div><!-- /content-area -->
-
+    </section>
+  
    <!-- RESEARCH -->
-<section id="section-research" class="panel">
+    <section id="section-research" class="panel">
   <h2 class="panel-title">Research</h2>
   <p class="hint">Manage research projects, publications, and activities.</p>
-
-  <button class="btn-add" onclick="addResearchRow()">
-    <i class="fas fa-plus"></i> Add Research
-  </button>
-
-  <div class="drag-list" id="research-admin-list"></div>
-</section>
-<!-- TRAINING & PLACEMENT -->
-<section id="section-tpc" class="panel">
+ <button class="btn-add" onclick="addResearchRow()"> <i class="fas fa-plus"></i> Add Research </button>
+<div class="drag-list" id="research-admin-list"></div>
+    </section>
+    <!-- TRAINING & PLACEMENT -->
+    <section id="section-tpc" class="panel">
   <h2 class="panel-title">Training & Placement</h2>
   <p class="hint">Manage placement companies, drives, and training programs.</p>
 
@@ -235,9 +233,9 @@
   </button>
 
   <div class="drag-list" id="tpc-admin-list"></div>
-</section>
-<!-- MOUs -->
-<section id="section-mous" class="panel">
+    </section>
+    <!-- MOUs -->
+    <section id="section-mous" class="panel">
   <h2 class="panel-title">MOUs (Memorandum of Understanding)</h2>
   <p class="hint">Manage partner organizations and collaborations.</p>
 
@@ -246,7 +244,8 @@
   </button>
 
   <div class="drag-list" id="mous-admin-list"></div>
-</section>
+    </section>
+  </div>
 </main>
 
 
@@ -260,9 +259,38 @@
 </div>
 
 <!-- TOAST -->
+ 
+<script>
+function checkAuthAndRedirect() {
+  const auth = sessionStorage.getItem('admin_auth');
+  const expiry = parseInt(sessionStorage.getItem('admin_expiry') || '0');
+
+  if (auth !== 'true' || Date.now() > expiry) {
+    sessionStorage.clear();
+    window.location.replace("login.html");
+  }
+}
+
+// 1. When page loads normally
+window.addEventListener('load', checkAuthAndRedirect);
+
+// 2. When user comes using BACK/FORWARD (IMPORTANT)
+window.addEventListener('pageshow', function (event) {
+  if (event.persisted) {
+    checkAuthAndRedirect();
+  }
+});
+
+// 3. Extra protection for history navigation
+window.addEventListener('popstate', function () {
+  checkAuthAndRedirect();
+});
+</script>
 <div class="toast" id="toast"></div>
 
 <script src="../data.js"></script>
+
 <script src="admin.js"></script>
+
 </body>
 </html>

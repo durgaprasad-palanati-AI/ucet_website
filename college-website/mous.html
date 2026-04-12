@@ -698,7 +698,7 @@ function filterMOUs(type, btn) {
   document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 
-  const all = COLLEGE_DATA.mous || [];
+  const all = Array.isArray(COLLEGE_DATA.mous) ? COLLEGE_DATA.mous : [];  // ← fix here
   const filtered = type === 'all' ? all : all.filter(m => m.type === type);
   renderAccordion(filtered);
 }

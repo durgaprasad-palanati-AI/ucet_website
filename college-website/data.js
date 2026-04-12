@@ -461,95 +461,94 @@ var COLLEGE_DATA = {
       "link": "https://scholarships.gov.in/"
     }
   ],
-  "research": [
-  {
-    "title": "AI in Healthcare",
-    "dept": "CSE",
-    "funding": "DST",
-    "amount": "₹15 Lakhs",
-    "status": "Ongoing"
-  },
-  {
-    "title": "Smart Grid Systems",
-    "dept": "Electrical",
-    "funding": "AICTE",
-    "amount": "₹10 Lakhs",
-    "status": "Ongoing"
-  }
-],
-"tpc" : [
-  {
-    "intro": "The Training & Placement Cell bridges the gap between academia and industry. We conduct training programs, mock interviews, and coordinate campus recruitment.",
-    "officer": "Dr. T. Placement Officer",
-    "officer_email": "tpc@college.edu.in",
-    "officer_phone": "+91 98765 00001",
-    "stats": [
-      { "num": "95%", "label": "Placement Rate" },
-      { "num": "150+", "label": "Companies" },
-      { "num": "₹6.5 LPA", "label": "Avg Package" },
-      { "num": "₹18 LPA", "label": "Highest Package" }
-    ],
-    "companies": ["TCS", "Infosys", "Wipro", "HCL", "Tech Mahindra", "Capgemini", "Accenture", "IBM"],
-    "activities": [
-      "Aptitude Training",
-      "Soft Skills & Communication",
-      "Mock Interviews & GDs",
-      "Resume Building Workshops",
-      "Industry Expert Talks"
-    ]
-  }
-]
+  "research": {},
+  "tpc": {},
+  "mous": [
+    {
+      "org": "Tata Consultancy Services",
+      "type": "Industry MOU",
+      "purpose": "Internships & Placements",
+      "year": "2022",
+      "logo": "",
+      "description": "MOU signed with TCS to provide internship opportunities, placement support and industry exposure for final year students.",
+      "benefits": [
+        "Campus recruitment drives",
+        "Internship programs",
+        "Industry mentorship",
+        "Technical training"
+      ],
+      "duration": "3 Years",
+      "doc_link": ""
+    },
+    {
+      "org": "Microsoft",
+      "type": "Academic MOU",
+      "purpose": "Azure Cloud Training",
+      "year": "2023",
+      "logo": "",
+      "description": "Partnership with Microsoft to provide Azure cloud computing training and certification support to students and faculty.",
+      "benefits": [
+        "Free Azure credits for students",
+        "Faculty development programs",
+        "Certification courses",
+        "Access to Microsoft tools"
+      ],
+      "duration": "2 Years",
+      "doc_link": ""
+    },
+    {
+      "org": "NASSCOM",
+      "type": "Industry MOU",
+      "purpose": "Skill Development",
+      "year": "2021",
+      "logo": "",
+      "description": "Collaboration with NASSCOM for industry-aligned skill development programs to enhance student employability.",
+      "benefits": [
+        "Skill assessment programs",
+        "Industry connect sessions",
+        "FutureSkills platform access",
+        "Digital literacy training"
+      ],
+      "duration": "3 Years",
+      "doc_link": ""
+    },
+    {
+      "org": "IIT Hyderabad",
+      "type": "Academic MOU",
+      "purpose": "Research Collaboration",
+      "year": "2022",
+      "logo": "",
+      "description": "Research collaboration MOU with IIT Hyderabad for joint research projects, faculty exchange and student internships.",
+      "benefits": [
+        "Joint research projects",
+        "Faculty exchange program",
+        "Student research internships",
+        "Access to advanced labs"
+      ],
+      "duration": "5 Years",
+      "doc_link": ""
+    },
+    {
+      "org": "MOI",
+      "type": "Industry MOU",
+      "purpose": "Internships & Placements",
+      "year": "2026",
+      "duration": "4",
+      "logo": "images/moi.png",
+      "description": "MOU signed with MOI to provide internship opportunities, placement support and industry exposure for final year students",
+      "benefits": [
+        "Campus recruitment drives",
+        "Internship programs"
+      ],
+      "doc_link": "images/moi.png"
+    }
+  ]
 };
+
 // ── ADDITIONAL SECTIONS (appended) ──────────────────────
 
 
-COLLEGE_DATA.mous = [
-  {
-    "org": "Tata Consultancy Services",
-    "type": "Industry MOU",
-    "purpose": "Internships & Placements",
-    "year": "2022",
-    "logo": "",
-    "description": "MOU signed with TCS to provide internship opportunities, placement support and industry exposure for final year students.",
-    "benefits": ["Campus recruitment drives", "Internship programs", "Industry mentorship", "Technical training"],
-    "duration": "3 Years",
-    "doc_link": ""
-  },
-  {
-    "org": "Microsoft",
-    "type": "Academic MOU",
-    "purpose": "Azure Cloud Training",
-    "year": "2023",
-    "logo": "",
-    "description": "Partnership with Microsoft to provide Azure cloud computing training and certification support to students and faculty.",
-    "benefits": ["Free Azure credits for students", "Faculty development programs", "Certification courses", "Access to Microsoft tools"],
-    "duration": "2 Years",
-    "doc_link": ""
-  },
-  {
-   "org": "NASSCOM",
-    "type":  "Industry MOU",
-   "purpose":"Skill Development",
-   "year":"2021",
-    "logo":"",
-    "description": "Collaboration with NASSCOM for industry-aligned skill development programs to enhance student employability.",
-    "benefits": ["Skill assessment programs", "Industry connect sessions", "FutureSkills platform access", "Digital literacy training"],
-    "duration": "3 Years",
-    "doc_link": ""
-  },
-  {
-    "org": "IIT Hyderabad",
-    "type": "Academic MOU",
-    "purpose": "Research Collaboration",
-    "year": "2022",
-    "logo": "",
-    "description": "Research collaboration MOU with IIT Hyderabad for joint research projects, faculty exchange and student internships.",
-    "benefits": ["Joint research projects", "Faculty exchange program", "Student research internships", "Access to advanced labs"],
-    "duration": "5 Years",
-    "doc_link": ""
-  }
-];
-
+/*
 COLLEGE_DATA.alumni = {
   intro: "Our alumni are our pride. They are making a difference in industries, academia, and entrepreneurship across the globe.",
   stats: [
@@ -625,3 +624,4 @@ COLLEGE_DATA.facilities = [
   { name: "Medical Center", icon: "fas fa-heartbeat", desc: "On-campus medical facility with resident doctor and ambulance." },
   { name: "Wi-Fi Campus", icon: "fas fa-wifi", desc: "High-speed 1 Gbps Wi-Fi available across all campus buildings." }
 ];
+*/

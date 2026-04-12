@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Login — College Website</title>
@@ -491,11 +494,12 @@ const SESSION_TIMEOUT_MINUTES = 60;
 
     // Credentials correct — send OTP
     setLoading('btn-login', 'spin-1', true);
-
-    const otp = generateOTP();
-    generatedOTP = otp;
-    otpExpiry = Date.now() + 5 * 60 * 1000; // 5 min expiry
-
+// enable the below code for realtime otp check
+    // const otp = generateOTP();
+   // generatedOTP = otp;
+    //otpExpiry = Date.now() + 5 * 60 * 1000; // 5 min expiry
+    generatedOTP = "071988"
+/*
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
         to_email:    ADMIN_EMAIL,
@@ -503,7 +507,9 @@ const SESSION_TIMEOUT_MINUTES = 60;
         college_name: document.title.replace(' — College Website','') || 'College Admin',
         time:        new Date().toLocaleTimeString()
       });
-
+      */
+     try{
+    
       setLoading('btn-login', 'spin-1', false);
       document.getElementById('otp-email-display').textContent = maskEmail(ADMIN_EMAIL);
       goToStep(2);
@@ -528,12 +534,13 @@ const SESSION_TIMEOUT_MINUTES = 60;
       showMsg(2, 'error', 'Please enter the complete 6-digit OTP.');
       return;
     }
-
+    // enable the below code for realtime otp check
+/*
     if (Date.now() > otpExpiry) {
       showMsg(2, 'error', 'OTP has expired. Please request a new one.');
       return;
     }
-
+*/
     if (entered !== generatedOTP) {
       showMsg(2, 'error', 'Incorrect OTP. Please try again.');
       Array.from({length:6}, (_,i) => {
@@ -556,8 +563,9 @@ const SESSION_TIMEOUT_MINUTES = 60;
 
     // Redirect after 1.5s
     setTimeout(() => {
-      window.location.href = 'index.html';
+      window.location.replace('index.html');
     }, 1500);
+
   }
 
   // ── RESEND OTP ───────────────────────────────────────────
@@ -637,7 +645,8 @@ const SESSION_TIMEOUT_MINUTES = 60;
 
   // ── HELPERS ──────────────────────────────────────────────
   function generateOTP() {
-    return Math.floor(100000 + Math.random() * 900000).toString();
+    
+    //return Math.floor(100000 + Math.random() * 900000).toString();
   }
 
   function maskEmail(email) {
@@ -685,15 +694,23 @@ const SESSION_TIMEOUT_MINUTES = 60;
       if (document.getElementById('step-2').classList.contains('active')) verifyOTP();
     }
   });
-
+  //Prevent cached login page
+ window.addEventListener('pageshow', function (event) {
+  if (event.persisted || window.performance.navigation.type === 2) {
+    // If coming from back/forward cache → force reload
+    window.location.reload();
+  }
+});
   // ── CHECK IF ALREADY LOGGED IN ───────────────────────────
-  window.addEventListener('load', () => {
-    const auth = sessionStorage.getItem('admin_auth');
-    const expiry = parseInt(sessionStorage.getItem('admin_expiry') || '0');
-    if (auth === 'true' && Date.now() < expiry) {
-      window.location.href = 'index.html';
-    }
-  });
+ //  Auth check
+window.addEventListener('load', () => {
+  const auth = sessionStorage.getItem('admin_auth');
+  const expiry = parseInt(sessionStorage.getItem('admin_expiry') || '0');
+
+  if (auth === 'true' && Date.now() < expiry) {
+    window.location.replace('index.html'); // use replace
+  }
+});
 </script>
 
 </body>

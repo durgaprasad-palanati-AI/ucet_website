@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── ABOUT ──
   setText('about-para1', d.about.para1);
   setText('about-para2', d.about.para2);
-  const programList = document.getElementById('about-programs');
+  const programList = document.getElementById('about-points');
 
 d.about.programs.forEach(item => {
   const li = document.createElement('li');
@@ -112,9 +112,9 @@ topBtn.onclick = function () {
   renderNotices('events-list', d.events);
 renderScholarships('scholarships-list', d.scholarships || []);
 //
-renderResearch(d);
+//renderResearch(d);
 renderMous(d);
-renderTPC(d);
+//renderTPC(d);
   // ── GALLERY ──
   const gGrid = document.getElementById('gallery-grid');
   if (gGrid) {
@@ -211,6 +211,7 @@ function renderScholarships(listId, items) {
       </div>
     </li>`).join('');
 }
+/* RESEARCH
 function renderResearch(d) {
   const el = document.getElementById('research-list');
   if (!el) return;
@@ -227,6 +228,7 @@ function renderResearch(d) {
     </div>
   `).join('');
 }
+*/
 function renderMous(d) {
   const el = document.getElementById('mous-list');
   if (!el) return;
@@ -253,6 +255,7 @@ function renderMous(d) {
     </div>
   `).join('');
 }
+/*
 function renderTPC(d) {
   console.log("TPC FUNCTION CALLED", d); 
   const el = document.getElementById('tpc-list');
@@ -296,7 +299,7 @@ console.log("TPC DATA:", items);
   `).join('');
 }
 
-
+*/
 function switchTab(listId, tabId) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
