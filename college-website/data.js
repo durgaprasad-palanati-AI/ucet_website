@@ -72,10 +72,10 @@ const COLLEGE_DATA = {
     },
     {
       "type": "video",
-      "src": "images/collegetour.mp4",
-      "thumbnail": "images/college.jpg",
+      "src": "images/ucet_tour.mp4",
+      "thumbnail": "images/ucet_entrance.png",
       "playInPage": true,
-      "caption": "Explore campus"
+      "caption": "Explore UCET"
     },
       {
       "type": "video",

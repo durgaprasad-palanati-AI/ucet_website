@@ -116,6 +116,7 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
   flex-shrink: 0;
   overflow: hidden;
   display: block;
+  cursor: pointer;
 }
 .hero-slide img,
 .hero-slide video {

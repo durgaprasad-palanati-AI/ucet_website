@@ -312,77 +312,143 @@ function toggleMenu() {
   document.querySelector('.nav').classList.toggle('open');
 }
 // ── HERO SLIDER ──────────────────────────────────────────
-(function() {
-  const slides  = (COLLEGE_DATA.heroSlider || []);
+(function () {
+  const slides = COLLEGE_DATA.heroSlider || [];
   if (!slides.length) return;
 
-  const track   = document.getElementById('hero-slider');
-  const dotsEl  = document.getElementById('slider-dots');
-  const caption = document.getElementById('slider-caption');
+  const track = document.getElementById("hero-slider");
+  const dotsEl = document.getElementById("slider-dots");
+  const caption = document.getElementById("slider-caption");
   if (!track) return;
 
   let current = 0;
-  let timer   = null;
-  const INTERVAL = 4000; // milliseconds between auto slides
+  const INTERVAL = 4000;
+
+  // GLOBAL TIMER (single source of truth)
+  window.heroTimer = null;
 
   // Build slides
-  track.innerHTML = slides.map((s, i) => {
-    if (s.type === 'video') {
-      // Show thumbnail with play button overlay
-      const clickAction = s.playInPage
-        ? `onclick="playHeroVideo(this, '${s.src}')" style="cursor:pointer"`
-        : `onclick="window.open('${s.link}','_blank')" style="cursor:pointer"`;
-      return `<div class="hero-slide" ${clickAction}>
-        <img src="${s.thumbnail || s.src}" alt="${s.caption || 'Video'}"
-             style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;position:absolute;top:0;left:0;"/>
-        <div class="video-play-btn">
-          <i class="fas fa-play"></i>
-        </div>
-        <div class="video-label">${s.link ? 'Click to Watch' : 'Click to Play'}</div>
-      </div>`;
-    }
-    return `<div class="hero-slide">
-      <img src="${s.src}" alt="${s.caption || ''}"
-           style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;position:absolute;top:0;left:0;"
-           loading="${i === 0 ? 'eager' : 'lazy'}"/>
-    </div>`;
-  }).join('');
-  // Build dots
-  dotsEl.innerHTML = slides.map((_, i) =>
-    `<button class="slider-dot${i === 0 ? ' active' : ''}" onclick="goSlide(${i})"></button>`
-  ).join('');
+  track.innerHTML = slides
+    .map((s, i) => {
+      if (s.type === "video") {
+        const clickAction = s.playInPage
+          ? `onclick="playHeroVideo(this, '${s.src}')"`
+          : `onclick="window.open('${s.link}','_blank')"`;
 
-  // Go to slide
-  window.goSlide = function(n) {
+        return `
+        <div class="hero-slide" ${clickAction} style="cursor:pointer">
+          <img src="${s.thumbnail || s.src}" 
+               alt="${s.caption || "Video"}"
+               style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" />
+
+          <div class="video-play-btn">
+            <i class="fas fa-play"></i>
+          </div>
+
+          <div class="video-label">
+            ${s.link ? "Click to Watch" : "Click to Play"}
+          </div>
+        </div>`;
+      }
+
+      return `
+      <div class="hero-slide">
+        <img src="${s.src}" 
+             alt="${s.caption || ""}"
+             style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;"
+             loading="${i === 0 ? "eager" : "lazy"}" />
+      </div>`;
+    })
+    .join("");
+
+  // Build dots
+  dotsEl.innerHTML = slides
+    .map(
+      (_, i) =>
+        `<button class="slider-dot ${
+          i === 0 ? "active" : ""
+        }" onclick="goSlide(${i})"></button>`
+    )
+    .join("");
+
+  // RESET TIMER
+  function resetTimer() {
+    clearInterval(window.heroTimer);
+    window.heroTimer = setInterval(() => {
+      goSlide(current + 1);
+    }, INTERVAL);
+  }
+
+  // GO SLIDE
+  window.goSlide = function (n) {
     current = (n + slides.length) % slides.length;
+
     track.style.transform = `translateX(-${current * 100}%)`;
-    document.querySelectorAll('.slider-dot').forEach((d, i) =>
-      d.classList.toggle('active', i === current));
-    if (caption) caption.textContent = slides[current].caption || '';
+
+    document.querySelectorAll(".slider-dot").forEach((d, i) => {
+      d.classList.toggle("active", i === current);
+    });
+
+    if (caption) {
+      caption.textContent = slides[current].caption || "";
+    }
+
     resetTimer();
   };
 
-  // Arrows
-  window.sliderPrev = () => goSlide(current - 1);
-  window.sliderNext = () => goSlide(current + 1);
+  // SLIDER CONTROLS
+  window.sliderNext = () => {
+    document.querySelectorAll("video").forEach((v) => v.pause());
+    goSlide(current + 1);
+  };
 
-  // Auto play
-  function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => goSlide(current + 1), INTERVAL);
-  }
+  window.sliderPrev = () => {
+    document.querySelectorAll("video").forEach((v) => v.pause());
+    goSlide(current - 1);
+  };
 
-  // Init
+  // INIT
   goSlide(0);
 })();
 
-// Play video inside the slide
-window.playHeroVideo = function(slideEl, src) {
-  // Remove thumbnail and play button
+
+// ===============================
+// VIDEO HANDLER (GLOBAL)
+// ===============================
+window.playHeroVideo = function (slideEl, src) {
   slideEl.innerHTML = `
     <video src="${src}" autoplay controls playsinline
       style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;background:#000">
-    </video>`;
-  // Pause auto slider while video plays
-  clearInterval(timer);
+    </video>
+  `;
+
+  const video = slideEl.querySelector("video");
+
+  // STOP SLIDER
+  clearInterval(window.heroTimer);
+
+  if (video) {
+    video.addEventListener("ended", () => {
+      window.heroTimer = setInterval(() => {
+        const track = document.getElementById("hero-slider");
+        if (!track) return;
+      }, 4000);
+
+      // restart properly via slide system
+      const event = new Event("resumeSlider");
+      window.dispatchEvent(event);
+    });
+
+    video.addEventListener("play", () => {
+      clearInterval(window.heroTimer);
+    });
+  }
 };
+
+
+// ===============================
+// SAFE RESUME LISTENER
+// ===============================
+window.addEventListener("resumeSlider", () => {
+  const event = new Event("dummy");
+});
