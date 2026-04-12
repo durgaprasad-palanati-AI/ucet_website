@@ -201,6 +201,7 @@ window.saveMOU = saveMOU;
 function renderAllLists() {
   renderDeptList();
   renderFacultyList();
+  renderSliderList();
   renderNoticeList('notices');
   renderNoticeList('circulars');
   renderNoticeList('events');
@@ -724,6 +725,54 @@ window.deleteTPC = (i) => {
   }
 };
 */
+// hero slider images videos
+function renderSliderList() {
+  const el = document.getElementById('slider-admin-list');
+  if (!el) return;
+  const items = DATA.heroSlider || [];
+  if (!items.length) {
+    el.innerHTML = '<p style="color:#64748b;font-size:14px">No slides added yet.</p>';
+    return;
+  }
+  el.innerHTML = items.map((s, i) => `
+    <div class="drag-item">
+      <i class="fas fa-grip-vertical drag-handle"></i>
+      <div class="drag-item-info">
+        <strong>${s.caption || '(No caption)'}</strong>
+        <small>${s.type} — ${s.src}</small>
+      </div>
+      <div class="drag-item-actions">
+        <button class="btn-edit" onclick="editSlide(${i})"><i class="fas fa-edit"></i></button>
+        <button class="btn-del"  onclick="deleteSlide(${i})"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>`).join('');
+}
+window.addSlide = () => editSlide(-1);
+function editSlide(idx) {
+  const s = idx >= 0 ? DATA.heroSlider[idx] : { type:'image', src:'', caption:'' };
+  currentModal = { type: 'heroslide', idx };
+  openModal('Hero Slide', `
+    <div class="form-group"><label>Type</label>
+      <select id="m-stype">
+        <option ${s.type==='image'?'selected':''}>image</option>
+        <option ${s.type==='video'?'selected':''}>video</option>
+      </select>
+    </div>
+    <div class="form-group"><label>File (e.g. images/college.jpg)</label>
+      <input id="m-ssrc" type="text" value="${esc(s.src)}"/>
+    </div>
+    <div class="form-group"><label>Caption</label>
+      <input id="m-scaption" type="text" value="${esc(s.caption)}"/>
+    </div>`);
+}
+window.editSlide = editSlide;
+window.deleteSlide = (i) => {
+  if (confirm('Delete slide?')) {
+    DATA.heroSlider.splice(i, 1);
+    renderSliderList();
+    toast('Deleted');
+  }
+};
 // Handle save from modal (add this inside the saveModal if-else chain)
 // In the existing saveModal function, add:
 
@@ -818,6 +867,18 @@ else if (modalType === 'tpc') {
   if (idx < 0) DATA.tpc.push(obj);
   else DATA.tpc[idx] = obj;
   renderTPCList();
+}
+else if (modalType === 'heroslide') {
+  const obj = {
+    type: getVal('m-stype'),
+    src:  getVal('m-ssrc'),
+    caption: getVal('m-scaption')
+  };
+  if (!DATA.heroSlider) DATA.heroSlider = [];
+  if (idx < 0) DATA.heroSlider.push(obj);
+  else DATA.heroSlider[idx] = obj;
+  renderSliderList();
+  closeModal(); toast('Slide saved!');
 }
 
   closeModal();

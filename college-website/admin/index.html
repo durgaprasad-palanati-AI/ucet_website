@@ -26,6 +26,7 @@
  <a href="#" class="nav-item active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
     <a href="#" class="nav-item" data-section="basic-info"><i class="fas fa-info-circle"></i> Basic Info</a>
     <a href="#" class="nav-item" data-section="hero"><i class="fas fa-star"></i> Hero Section</a>
+    <a href="#" class="nav-item" data-section="heroslider">   <i class="fas fa-images"></i> Hero Slider </a>
     <a href="#" class="nav-item" data-section="about"><i class="fas fa-building"></i> About</a>
     <a href="#" class="nav-item" data-section="departments"><i class="fas fa-sitemap"></i> Departments</a>
     <a href="#" class="nav-item" data-section="faculty"><i class="fas fa-user-tie"></i> Faculty</a>
@@ -132,7 +133,15 @@
       </div>
       <button class="btn-primary" onclick="saveHero()"><i class="fas fa-save"></i> Save Changes</button>
     </section>
-
+    <!-- HERO slider -->
+<section id="section-heroslider" class="panel">
+  <h2 class="panel-title">Hero Slider</h2>
+  <p class="hint">Add images and videos for the homepage hero slider.</p>
+  <button class="btn-add" onclick="addSlide()">
+    <i class="fas fa-plus"></i> Add Slide
+  </button>
+  <div class="drag-list" id="slider-admin-list"></div>
+</section>
     <!-- ABOUT -->
     <section id="section-about" class="panel">
       <h2 class="panel-title">About Section</h2>

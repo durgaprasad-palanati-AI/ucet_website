@@ -1,10 +1,10 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 12/4/2026, 11:46:43 pm
+//  Last updated: 10/4/2026, 8:40:45 am
 // ============================================================
 
-const COLLEGE_DATA = {
+var COLLEGE_DATA = {
   "info": {
     "name": "UNIVERSITY COLLEGE OF ENGINEERING AND TECHNOLOGY",
     "affiliation": "Mahatma GAndhi University",
@@ -39,53 +39,12 @@ const COLLEGE_DATA = {
       }
     ]
   },
-  "heroSlider": [
-    {
-      "type": "image",
-      "src": "images/college.jpeg",
-      "caption": "University College of Engineering & Technology"
-    },
-    {
-      "type": "image",
-      "src": "images/projectexpo.jpeg",
-      "caption": "Project Expo 2025"
-    },
-    {
-      "type": "image",
-      "src": "images/expo2.webp",
-      "caption": "Technical Exhibition"
-    },
-        {
-      "type": "image",
-      "src": "images/ground.webp",
-      "caption": "Play Ground"
-    },
-    {
-      "type": "image",
-      "src": "images/library.webp",
-      "caption": "University Library"
-    },
-    {
-      "type": "image",
-      "src": "images/maingate.webp",
-      "caption": "MAINGATE"
-    },
-    {
-      "type": "video",
-      "src": "images/collegetour.mp4",
-      "thumbnail": "images/college.jpg",
-      "playInPage": true,
-      "caption": "Explore campus"
-    },
-      {
-      "type": "video",
-      "src": "",
-      "thumbnail": "images/college.jpeg",
-      "playInPage": false,
-      "caption": "Explore campus in youtube",
-      "link":"https://www.youtube.com/watch?v=-4cj29ivn88"
-    }
-  ],
+  "heroSlider" : [
+  { "type": "image", "src": "images/college.jpeg",       "caption": "University College of Engineering & Technology" },
+  { "type": "image", "src": "images/projectexpo.jpeg",   "caption": "Project Expo 2025" },
+  { "type": "image", "src": "images/expo2.webp",         "caption": "Technical Exhibition" },
+   { "type": "video", "src": "images/campus-tour.mp4", "caption": "Campus Tour" }
+],
   "about": {
     "para1": "The University College of Engineering & Technology, established in 2013 at Panagal, Nalgonda, is currently functioning from its full-fledged campus at Anneparthy, Nalgonda, with modern infrastructure and well-equipped laboratories. The institution is strategically located to provide accessible technical education to students from rural areas of the district.",
     "para2": "The college offers undergraduate B.Tech. programmes in three disciplines, aligned with global standards and focused on equipping students with the dynamic, industry-relevant skills essential for modern engineering.",
@@ -591,3 +550,84 @@ const COLLEGE_DATA = {
     }
   ]
 };
+
+// ── ADDITIONAL SECTIONS (appended) ──────────────────────
+
+
+/*
+COLLEGE_DATA.alumni = {
+  intro: "Our alumni are our pride. They are making a difference in industries, academia, and entrepreneurship across the globe.",
+  stats: [
+    { num: "10,000+", label: "Alumni Worldwide" },
+    { num: "50+", label: "Entrepreneurs" },
+    { num: "200+", label: "in Fortune 500" }
+  ],
+  notable: [
+    { name: "Alumni Name 1", batch: "2010", company: "Google, USA", role: "Senior Engineer" },
+    { name: "Alumni Name 2", batch: "2012", company: "Microsoft", role: "Product Manager" },
+    { name: "Alumni Name 3", batch: "2015", company: "Startup Founder", role: "CEO" }
+  ],
+  association_email: "alumni@college.edu.in"
+};
+
+COLLEGE_DATA.antiragging = {
+  intro: "Ragging in any form is strictly prohibited in our college campus. We are committed to providing a safe and respectful environment for all students.",
+  committee_chair: "Dr. Principal",
+  helpline: "1800-180-5522 (UGC Toll Free)",
+  college_helpline: "+91 98765 11111",
+  email: "antiragging@college.edu.in",
+  members: [
+    { name: "Dr. Principal", role: "Chairman" },
+    { name: "Prof. Dean Students", role: "Member" },
+    { name: "Dr. Hostel Warden", role: "Member" },
+    { name: "Student Representative", role: "Student Member" }
+  ],
+  pledge: "We the students of this institution solemnly affirm that we will not indulge in any act of ragging.",
+  rules: [
+    "Ragging is a punishable offence under UGC regulations",
+    "Complaint can be filed at anti-ragging helpline 1800-180-5522",
+    "Strict disciplinary action including expulsion will be taken",
+    "CCTV surveillance across campus 24x7"
+  ]
+};
+
+COLLEGE_DATA.nssncc = {
+  nss: {
+    intro: "The National Service Scheme (NSS) unit of our college has been actively involved in community service, social awareness programs, and national integration activities.",
+    officer: "Dr. NSS Programme Officer",
+    strength: "200+ Volunteers",
+    activities: [
+      "Blood Donation Camps",
+      "Tree Plantation Drives",
+      "Village Adoption Program",
+      "Swachh Bharat Activities",
+      "Disaster Relief Camps",
+      "Health & Hygiene Awareness"
+    ]
+  },
+  ncc: {
+    intro: "The National Cadet Corps (NCC) unit instills discipline, leadership and patriotism among students through training and service activities.",
+    officer: "Lt. NCC Officer",
+    strength: "100+ Cadets",
+    wing: "Army Wing",
+    activities: [
+      "Annual Training Camps",
+      "Republic Day Parade",
+      "Social Service Activities",
+      "Adventure Activities",
+      "Leadership Training"
+    ]
+  }
+};
+
+COLLEGE_DATA.facilities = [
+  { name: "Central Library", icon: "fas fa-book", desc: "Over 50,000 books, e-journals, and digital resources. Open 8 AM – 8 PM." },
+  { name: "Computer Labs", icon: "fas fa-desktop", desc: "6 labs with 600+ systems, high-speed internet, latest software." },
+  { name: "Hostels", icon: "fas fa-home", desc: "Separate hostels for boys and girls with all modern amenities." },
+  { name: "Cafeteria", icon: "fas fa-utensils", desc: "Hygienic food, multiple cuisines, subsidized rates for students." },
+  { name: "Sports Complex", icon: "fas fa-running", desc: "Cricket, football, basketball, volleyball, indoor games & gym." },
+  { name: "Auditorium", icon: "fas fa-theater-masks", desc: "1000-seat air-conditioned auditorium for events and seminars." },
+  { name: "Medical Center", icon: "fas fa-heartbeat", desc: "On-campus medical facility with resident doctor and ambulance." },
+  { name: "Wi-Fi Campus", icon: "fas fa-wifi", desc: "High-speed 1 Gbps Wi-Fi available across all campus buildings." }
+];
+*/

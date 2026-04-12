@@ -63,16 +63,33 @@
     </nav>
 <!-- HERO -->
 <section class="hero" id="home">
+
+  <!-- SLIDER TRACK -->
+  <div class="hero-slider" id="hero-slider">
+    <!-- filled by main.js -->
+  </div>
+
+  <!-- DARK OVERLAY -->
   <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-sub" id="hero-sub">Welcome to Excellence in Education</p>
-          </div>
-          <div class="hero-stats">
-      <div class="stat"><strong id="stat1-num">25+</strong><span id="stat1-label">Years</span></div>
-      <div class="stat"><strong id="stat2-num">5000+</strong><span id="stat2-label">Students</span></div>
-      <div class="stat"><strong id="stat3-num">200+</strong><span id="stat3-label">Faculty</span></div>
-      <div class="stat"><strong id="stat4-num">95%</strong><span id="stat4-label">Placement</span></div>
-    </div>
+
+  <!-- ARROW BUTTONS -->
+  <button class="slider-btn slider-prev" onclick="sliderPrev()">&#10094;</button>
+  <button class="slider-btn slider-next" onclick="sliderNext()">&#10095;</button>
+
+  <!-- DOTS -->
+  <div class="slider-dots" id="slider-dots"></div>
+
+  <!-- CAPTION -->
+  <div class="slider-caption" id="slider-caption"></div>
+
+  <!-- STATS BAR INSIDE HERO BOTTOM -->
+  <div class="hero-stats">
+    <div class="stat"><strong id="stat1-num">13+</strong><span id="stat1-label">Years</span></div>
+    <div class="stat"><strong id="stat2-num">5000+</strong><span id="stat2-label">Students</span></div>
+    <div class="stat"><strong id="stat3-num">30+</strong><span id="stat3-label">Faculty</span></div>
+    <div class="stat"><strong id="stat4-num">80%</strong><span id="stat4-label">Placements</span></div>
+  </div>
+
 </section>
 
 <!-- MARQUEE NOTICES -->
