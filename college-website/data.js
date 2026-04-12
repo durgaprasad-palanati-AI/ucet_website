@@ -4,7 +4,7 @@
 //  Last updated: 10/4/2026, 8:40:45 am
 // ============================================================
 
-const COLLEGE_DATA = {
+var COLLEGE_DATA = {
   "info": {
     "name": "UNIVERSITY COLLEGE OF ENGINEERING AND TECHNOLOGY",
     "affiliation": "Mahatma GAndhi University",
@@ -461,89 +461,92 @@ const COLLEGE_DATA = {
       "link": "https://scholarships.gov.in/"
     }
   ],
-  "research": {
-    
-    "intro": "Our college promotes research and innovation across all departments. Faculty and students actively contribute to national and international research.",
- "highlights": [
-    "10 funded research projects",
-    "6 patents filed",
-    "50+ publications per year",
-    "Collaboration with DRDO, ISRO & industry"
-  ],
-  "projects": [
-    { title: "AI in Healthcare", dept: "CSE", funding: "DST", amount: "₹15 Lakhs", status: "Ongoing" },
-    { title: "Smart Grid Systems", dept: "Electrical", funding: "AICTE", amount: "₹10 Lakhs", status: "Ongoing" }
-  ]
-}
+  "research": [
+  {
+    "title": "AI in Healthcare",
+    "dept": "CSE",
+    "funding": "DST",
+    "amount": "₹15 Lakhs",
+    "status": "Ongoing"
+  },
+  {
+    "title": "Smart Grid Systems",
+    "dept": "Electrical",
+    "funding": "AICTE",
+    "amount": "₹10 Lakhs",
+    "status": "Ongoing"
+  }
+],
+"tpc" : [
+  {
+    "intro": "The Training & Placement Cell bridges the gap between academia and industry. We conduct training programs, mock interviews, and coordinate campus recruitment.",
+    "officer": "Dr. T. Placement Officer",
+    "officer_email": "tpc@college.edu.in",
+    "officer_phone": "+91 98765 00001",
+    "stats": [
+      { "num": "95%", "label": "Placement Rate" },
+      { "num": "150+", "label": "Companies" },
+      { "num": "₹6.5 LPA", "label": "Avg Package" },
+      { "num": "₹18 LPA", "label": "Highest Package" }
+    ],
+    "companies": ["TCS", "Infosys", "Wipro", "HCL", "Tech Mahindra", "Capgemini", "Accenture", "IBM"],
+    "activities": [
+      "Aptitude Training",
+      "Soft Skills & Communication",
+      "Mock Interviews & GDs",
+      "Resume Building Workshops",
+      "Industry Expert Talks"
+    ]
+  }
+]
 };
 // ── ADDITIONAL SECTIONS (appended) ──────────────────────
 
 
-COLLEGE_DATA.tpc = {
-  intro: "The Training & Placement Cell bridges the gap between academia and industry. We conduct training programs, mock interviews, and coordinate campus recruitment.",
-  officer: "Dr. T. Placement Officer",
-  officer_email: "tpc@college.edu.in",
-  officer_phone: "+91 98765 00001",
-  stats: [
-    { num: "95%", label: "Placement Rate" },
-    { num: "150+", label: "Companies" },
-    { num: "₹6.5 LPA", label: "Avg Package" },
-    { num: "₹18 LPA", label: "Highest Package" }
-  ],
-  companies: ["TCS", "Infosys", "Wipro", "HCL", "Tech Mahindra", "Capgemini", "Accenture", "IBM"],
-  activities: [
-    "Aptitude Training",
-    "Soft Skills & Communication",
-    "Mock Interviews & GDs",
-    "Resume Building Workshops",
-    "Industry Expert Talks"
-  ]
-};
-
 COLLEGE_DATA.mous = [
   {
-    org: "Tata Consultancy Services",
-    type: "Industry MOU",
-    purpose: "Internships & Placements",
-    year: "2022",
-    logo: "",
-    description: "MOU signed with TCS to provide internship opportunities, placement support and industry exposure for final year students.",
-    benefits: ["Campus recruitment drives", "Internship programs", "Industry mentorship", "Technical training"],
-    duration: "3 Years",
-    doc_link: ""
+    "org": "Tata Consultancy Services",
+    "type": "Industry MOU",
+    "purpose": "Internships & Placements",
+    "year": "2022",
+    "logo": "",
+    "description": "MOU signed with TCS to provide internship opportunities, placement support and industry exposure for final year students.",
+    "benefits": ["Campus recruitment drives", "Internship programs", "Industry mentorship", "Technical training"],
+    "duration": "3 Years",
+    "doc_link": ""
   },
   {
-    org: "Microsoft",
-    type: "Academic MOU",
-    purpose: "Azure Cloud Training",
-    year: "2023",
-    logo: "",
-    description: "Partnership with Microsoft to provide Azure cloud computing training and certification support to students and faculty.",
-    benefits: ["Free Azure credits for students", "Faculty development programs", "Certification courses", "Access to Microsoft tools"],
-    duration: "2 Years",
-    doc_link: ""
+    "org": "Microsoft",
+    "type": "Academic MOU",
+    "purpose": "Azure Cloud Training",
+    "year": "2023",
+    "logo": "",
+    "description": "Partnership with Microsoft to provide Azure cloud computing training and certification support to students and faculty.",
+    "benefits": ["Free Azure credits for students", "Faculty development programs", "Certification courses", "Access to Microsoft tools"],
+    "duration": "2 Years",
+    "doc_link": ""
   },
   {
-    org: "NASSCOM",
-    type: "Industry MOU",
-    purpose: "Skill Development",
-    year: "2021",
-    logo: "",
-    description: "Collaboration with NASSCOM for industry-aligned skill development programs to enhance student employability.",
-    benefits: ["Skill assessment programs", "Industry connect sessions", "FutureSkills platform access", "Digital literacy training"],
-    duration: "3 Years",
-    doc_link: ""
+   "org": "NASSCOM",
+    "type":  "Industry MOU",
+   "purpose":"Skill Development",
+   "year":"2021",
+    "logo":"",
+    "description": "Collaboration with NASSCOM for industry-aligned skill development programs to enhance student employability.",
+    "benefits": ["Skill assessment programs", "Industry connect sessions", "FutureSkills platform access", "Digital literacy training"],
+    "duration": "3 Years",
+    "doc_link": ""
   },
   {
-    org: "IIT Hyderabad",
-    type: "Academic MOU",
-    purpose: "Research Collaboration",
-    year: "2022",
-    logo: "",
-    description: "Research collaboration MOU with IIT Hyderabad for joint research projects, faculty exchange and student internships.",
-    benefits: ["Joint research projects", "Faculty exchange program", "Student research internships", "Access to advanced labs"],
-    duration: "5 Years",
-    doc_link: ""
+    "org": "IIT Hyderabad",
+    "type": "Academic MOU",
+    "purpose": "Research Collaboration",
+    "year": "2022",
+    "logo": "",
+    "description": "Research collaboration MOU with IIT Hyderabad for joint research projects, faculty exchange and student internships.",
+    "benefits": ["Joint research projects", "Faculty exchange program", "Student research internships", "Access to advanced labs"],
+    "duration": "5 Years",
+    "doc_link": ""
   }
 ];
 

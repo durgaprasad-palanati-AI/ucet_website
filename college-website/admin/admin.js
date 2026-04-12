@@ -1,7 +1,21 @@
 // ============================================================
 //  ADMIN.JS — Full Admin Panel Logic
 // ============================================================
+// ── AUTH CHECK ─────────────────────────────
+(function () {
+  const auth = sessionStorage.getItem('admin_auth');
+  const expiry = parseInt(sessionStorage.getItem('admin_expiry') || '0');
 
+  if (auth !== 'true' || Date.now() > expiry) {
+    sessionStorage.clear();
+    window.location.href = "login.html";
+  }
+})();
+// Prevent back navigation after logout
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+  window.history.pushState(null, null, window.location.href);
+};
 // Local working copy of data
 let DATA = {};
 
@@ -11,6 +25,7 @@ let dragSrc = null;
 // ── INIT ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   DATA = JSON.parse(JSON.stringify(COLLEGE_DATA));
+  
   populateForms();
   renderAllLists();
   updateDashboardCounts();
@@ -72,6 +87,20 @@ function populateForms() {
 
   // Marquee
   setVal('marquee-text', (d.marquee || []).join('\n'));
+  // Research
+setVal('res-title', d.research?.title);
+setVal('res-desc', d.research?.description);
+setVal('res-points', (d.research?.points || []).join('\n'));
+
+// MOUs
+setVal('mou-title', d.mous?.title);
+setVal('mou-desc', d.mous?.description);
+setVal('mou-list', (d.mous?.list || []).join('\n'));
+
+// Training & Placement (if added earlier)
+setVal('tpc-title', d.tpc?.title);
+setVal('tpc-desc', d.tpc?.description);
+setVal('tpc-points', (d.tpc?.points || []).join('\n'));
 }
 
 // ── SAVE FORMS ─────────────────────────────────────────────
@@ -116,7 +145,28 @@ function saveMarquee() {
   toast('Marquee news saved!');
 }
 window.saveMarquee = saveMarquee;
+//save research,mous,etc
+// RESEARCH
+function saveResearch() {
+  DATA.research = {
+    title: getVal('res-title'),
+    description: getVal('res-desc'),
+    points: getVal('res-points').split('\n').map(s => s.trim()).filter(Boolean)
+  };
+  toast('Research updated!');
+}
+window.saveResearch = saveResearch;
 
+// MOUs
+function saveMOU() {
+  DATA.mous = {
+    title: getVal('mou-title'),
+    description: getVal('mou-desc'),
+    list: getVal('mou-list').split('\n').map(s => s.trim()).filter(Boolean)
+  };
+  toast('MOUs updated!');
+}
+window.saveMOU = saveMOU;
 // ── RENDER ALL LISTS ───────────────────────────────────────
 function renderAllLists() {
   renderDeptList();
@@ -127,8 +177,24 @@ function renderAllLists() {
   renderGalleryList();
   renderLinksList();
   renderScholarshipsList();  
+  renderResearchList();
+  renderMousList();
+  renderTPCList();
 }
 
+function saveTPC() {
+  DATA.tpc = {
+    title: getVal('tpc-title'),
+    description: getVal('tpc-desc'),
+    points: getVal('tpc-points')
+      .split('\n')
+      .map(s => s.trim())
+      .filter(Boolean)
+  };
+
+  toast('Training & Placement updated!');
+}
+window.saveTPC = saveTPC;
 // ── DEPARTMENTS ────────────────────────────────────────────
 function renderDeptList() {
   const el = document.getElementById('dept-list');
@@ -370,7 +436,176 @@ window.deleteScholarship = (i) => {
     toast('Deleted');
   }
 };
+// render research,etc
+// ── RESEARCH ─────────────────────────────────────────────
+function renderResearchList() {
+  const el = document.getElementById('research-admin-list');
+  if (!el) return;
 
+  const items = DATA.research || [];
+  el.innerHTML = items.map((r, i) => `
+  <div class="drag-item" draggable="true" data-list="research" data-idx="${i}">
+    <i class="fas fa-grip-vertical drag-handle"></i>
+    <div class="drag-item-info">
+      <<h3>${r.title}</h3>
+      <p><strong>Department:</strong> ${r.dept}</p>
+      <p><strong>Funding:</strong> ${r.funding}</p>
+      <p><strong>Amount:</strong> ${r.amount}</p>
+      <p><strong>Status:</strong> ${r.status}</p>
+    </div>
+    <div class="drag-item-actions">
+      <button onclick="editResearch(${i})"><i class="fas fa-edit"></i></button>
+      <button onclick="deleteResearch(${i})"><i class="fas fa-trash"></i></button>
+    </div>
+  </div>
+`).join('');
+
+  bindDrag('research-admin-list', 'research');
+}
+function addResearchRow() { editResearch(-1); }
+window.addResearchRow = addResearchRow;
+
+function editResearch(idx) {
+  const r = idx >= 0 ? DATA.research[idx] : { title: '', desc: '' };
+  currentModal = { type: 'research', idx };
+
+  openModal('Research Item', `
+    <div class="form-group">
+      <label>Title</label>
+      <input id="m-rtitle" type="text" value="${esc(r.title)}"/>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="m-rdesc" rows="3">${esc(r.desc)}</textarea>
+    </div>
+  `);
+}
+window.editResearch = editResearch;
+
+window.deleteResearch = (i) => {
+  if (confirm('Delete this research item?')) {
+    DATA.research.splice(i, 1);
+    renderResearchList();
+    toast('Deleted');
+  }
+};
+
+// ── MOUs ─────────────────────────────────────────────
+function renderMousList() {
+  const el = document.getElementById('mous-admin-list');
+  if (!el) return;
+
+  const items = DATA.mous || [];
+  el.innerHTML = items.map((m, i) => `
+  <div class="drag-item" draggable="true" data-list="mous" data-idx="${i}">
+    <i class="fas fa-grip-vertical drag-handle"></i>
+    <div class="drag-item-info">
+      <strong>${m.org}</strong>
+      <small>${m.desc}</small>
+    </div>
+    <div class="drag-item-actions">
+      <button onclick="editMou(${i})"><i class="fas fa-edit"></i></button>
+      <button onclick="deleteMou(${i})"><i class="fas fa-trash"></i></button>
+    </div>
+  </div>
+`).join('');
+
+  bindDrag('mous-admin-list', 'mous');
+}
+function addMouRow() { editMou(-1); }
+window.addMouRow = addMouRow;
+
+function editMou(idx) {
+  const m = idx >= 0 ? DATA.mous[idx] : { org: '', desc: '' };
+  currentModal = { type: 'mou', idx };
+
+  openModal('MOU', `
+    <div class="form-group">
+      <label>Organization Name</label>
+      <input id="m-morg" type="text" value="${esc(m.org)}"/>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="m-mdesc" rows="3">${esc(m.desc)}</textarea>
+    </div>
+  `);
+}
+window.editMou = editMou;
+
+window.deleteMou = (i) => {
+  if (confirm('Delete this MOU?')) {
+    DATA.mous.splice(i, 1);
+    renderMousList();
+    toast('Deleted');
+  }
+};
+
+// ── TRAINING & PLACEMENT ─────────────────────────────
+function renderTPCList() {
+  const el = document.getElementById('tpc-list'); // make sure this ID exists
+  if (!el) return;
+
+  const items = DATA.tpc || [];
+
+  el.innerHTML = items.map(t => `
+    <div class="card">
+
+      <h2>Training & Placement Cell</h2>
+
+      <p>${t.intro}</p>
+
+      <h3>Placement Officer</h3>
+      <p>
+        ${t.officer}<br>
+        Email: ${t.officer_email}<br>
+        Phone: ${t.officer_phone}
+      </p>
+
+      <h3>Placement Statistics</h3>
+      <ul>
+        ${(t.stats || []).map(s => `
+          <li><strong>${s.num}</strong> - ${s.label}</li>
+        `).join('')}
+      </ul>
+
+      <h3>Top Recruiters</h3>
+      <p>${(t.companies || []).join(', ')}</p>
+
+      <h3>Activities</h3>
+      <ul>
+        ${(t.activities || []).map(a => `<li>${a}</li>`).join('')}
+      </ul>
+
+    </div>
+  `).join('');
+}
+function addTPCRow() { editTPC(-1); }
+window.addTPCRow = addTPCRow;
+
+function editTPC(idx) {
+  const t = idx >= 0 ? DATA.tpc[idx] : { company: '', desc: '' };
+  currentModal = { type: 'tpc', idx };
+
+  openModal('Training & Placement', `
+    <div class="form-group">
+      <label>Company Name</label>
+      <input id="m-tcompany" type="text" value="${esc(t.company)}"/>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="m-tdesc" rows="3">${esc(t.desc)}</textarea>
+    </div>
+  `);
+}
+window.editTPC = editTPC;
+
+window.deleteTPC = (i) => {
+  if (confirm('Delete this entry?')) {
+    DATA.tpc.splice(i, 1);
+    renderTPCList();
+    toast('Deleted');
+  }
+};
 // Handle save from modal (add this inside the saveModal if-else chain)
 // In the existing saveModal function, add:
 
@@ -422,7 +657,40 @@ function saveModal() {
   if (idx < 0) DATA.scholarships.push(obj);
   else DATA.scholarships[idx] = obj;
   renderScholarshipsList();
+} 
+else if (type === 'research') {
+  const obj = {
+    title: getVal('m-rtitle'),
+    desc: getVal('m-rdesc')
+  };
+  if (!DATA.research) DATA.research = [];
+  if (idx < 0) DATA.research.push(obj);
+  else DATA.research[idx] = obj;
+  renderResearchList();
 }
+
+else if (type === 'mou') {
+  const obj = {
+    org: getVal('m-morg'),
+    desc: getVal('m-mdesc')
+  };
+  if (!DATA.mous) DATA.mous = [];
+  if (idx < 0) DATA.mous.push(obj);
+  else DATA.mous[idx] = obj;
+  renderMousList();
+}
+
+else if (type === 'tpc') {
+  const obj = {
+    company: getVal('m-tcompany'),
+    desc: getVal('m-tdesc')
+  };
+  if (!DATA.tpc) DATA.tpc = [];
+  if (idx < 0) DATA.tpc.push(obj);
+  else DATA.tpc[idx] = obj;
+  renderTPCList();
+}
+
   closeModal();
   toast('Saved successfully!');
 }
@@ -494,7 +762,32 @@ function saveAllData() {
     if (hlVal) DATA.about.highlights = hlVal.split('\n').map(s => s.trim()).filter(Boolean);
     const mqVal = getVal('marquee-text');
     if (mqVal) DATA.marquee = mqVal.split('\n').map(s => s.trim()).filter(Boolean);
-  }
+  
+  // Research
+DATA.research = {
+  title: getVal('res-title') || DATA.research?.title,
+  description: getVal('res-desc') || DATA.research?.description,
+  points: getVal('res-points')
+    ? getVal('res-points').split('\n').map(s => s.trim()).filter(Boolean)
+    : DATA.research?.points
+};
+
+// MOUs
+DATA.mous = {
+  title: getVal('mou-title') || DATA.mous?.title,
+  description: getVal('mou-desc') || DATA.mous?.description,
+  list: getVal('mou-list')
+    ? getVal('mou-list').split('\n').map(s => s.trim()).filter(Boolean)
+    : DATA.mous?.list
+};
+DATA.tpc = {
+  title: getVal('tpc-title') || DATA.tpc?.title,
+  description: getVal('tpc-desc') || DATA.tpc?.description,
+  points: getVal('tpc-points')
+    ? getVal('tpc-points').split('\n').map(s => s.trim()).filter(Boolean)
+    : DATA.tpc?.points
+};
+}
 
   const js = `// ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
@@ -521,6 +814,15 @@ function setVal(id, val) { const el = document.getElementById(id); if (el) el.va
 function setElText(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
 function esc(str) { return String(str || '').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
 
+// LOGOUT
+function logout() {
+  localStorage.removeItem('adminLoggedIn');
+
+  // Redirect properly (no back)
+  window.location.replace("login.html");
+}
+
+window.logout = logout;
 function toast(msg, isError = false) {
   const t = document.getElementById('toast');
   t.textContent = msg;

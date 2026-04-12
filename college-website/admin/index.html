@@ -57,6 +57,9 @@
     <div class="topbar-actions">
       <button class="btn-save" onclick="saveAllData()"><i class="fas fa-download"></i> Export & Save</button>
       <a href="../index.html" target="_blank" class="btn-preview"><i class="fas fa-eye"></i> Preview</a>
+      <button onclick="logout()" class="btn-ghost">
+  <i class="fas fa-sign-out-alt"></i> Logout
+</button>
     </div>
   </div>
 
@@ -210,7 +213,42 @@
   <div class="drag-list" id="scholarships-list"></div>
 </section>
   </div><!-- /content-area -->
+
+   <!-- RESEARCH -->
+<section id="section-research" class="panel">
+  <h2 class="panel-title">Research</h2>
+  <p class="hint">Manage research projects, publications, and activities.</p>
+
+  <button class="btn-add" onclick="addResearchRow()">
+    <i class="fas fa-plus"></i> Add Research
+  </button>
+
+  <div class="drag-list" id="research-admin-list"></div>
+</section>
+<!-- TRAINING & PLACEMENT -->
+<section id="section-tpc" class="panel">
+  <h2 class="panel-title">Training & Placement</h2>
+  <p class="hint">Manage placement companies, drives, and training programs.</p>
+
+  <button class="btn-add" onclick="addTPCRow()">
+    <i class="fas fa-plus"></i> Add Placement
+  </button>
+
+  <div class="drag-list" id="tpc-admin-list"></div>
+</section>
+<!-- MOUs -->
+<section id="section-mous" class="panel">
+  <h2 class="panel-title">MOUs (Memorandum of Understanding)</h2>
+  <p class="hint">Manage partner organizations and collaborations.</p>
+
+  <button class="btn-add" onclick="addMouRow()">
+    <i class="fas fa-plus"></i> Add MOU
+  </button>
+
+  <div class="drag-list" id="mous-admin-list"></div>
+</section>
 </main>
+
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">

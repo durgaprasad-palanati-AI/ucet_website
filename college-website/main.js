@@ -1,7 +1,8 @@
 // main.js — Reads COLLEGE_DATA and populates the website
-
+const DATA = JSON.parse(localStorage.getItem('college_data')) || COLLEGE_DATA;
+const d = DATA;
 document.addEventListener('DOMContentLoaded', () => {
-  const d = COLLEGE_DATA;
+
 
   // ── INFO ──
   setText('college-name', d.info.name);
@@ -103,12 +104,17 @@ topBtn.onclick = function () {
     ).join('');
   }
   renderFaculty('all');
+//
 
   // ── NOTICES / CIRCULARS / EVENTS / scholatship──
   renderNotices('notices-list', d.notices);
   renderNotices('circulars-list', d.circulars);
   renderNotices('events-list', d.events);
 renderScholarships('scholarships-list', d.scholarships || []);
+//
+renderResearch(d);
+renderMous(d);
+renderTPC(d);
   // ── GALLERY ──
   const gGrid = document.getElementById('gallery-grid');
   if (gGrid) {
@@ -184,21 +190,6 @@ function renderNotices(listId, items) {
       </div>
     </li>`).join('');
 }
-// Inside renderAdditionalSections() function
-if (d.scholarships) {
-  const sg = document.getElementById('scholarships-grid');
-  if (sg) sg.innerHTML = d.scholarships.map(s => `
-    <div class="dept-card">
-      <div class="dept-icon"><i class="fas fa-rupee-sign"></i></div>
-      <h3>${s.name}</h3>
-      <p>${s.eligibility}</p>
-      <p style="font-size:12px;color:#999">Amount: ${s.amount} | Deadline: ${s.deadline}</p>
-      ${s.link ? `<a href="${s.link}" target="_blank" 
-        style="display:inline-block;margin-top:12px;padding:6px 16px;background:#1a3a6b;
-        color:white;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none">
-        Apply Now →</a>` : ''}
-    </div>`).join('');
-}
 function renderScholarships(listId, items) {
   const el = document.getElementById(listId);
   if (!el) return;
@@ -220,6 +211,92 @@ function renderScholarships(listId, items) {
       </div>
     </li>`).join('');
 }
+function renderResearch(d) {
+  const el = document.getElementById('research-list');
+  if (!el) return;
+
+  const items = d.research || [];
+
+  el.innerHTML = items.map(r => `
+    <div class="card">
+      <h3>${r.title}</h3>
+      <p><strong>Dept:</strong> ${r.dept}</p>
+      <p><strong>Funding:</strong> ${r.funding}</p>
+      <p><strong>Amount:</strong> ${r.amount}</p>
+      <p><strong>Status:</strong> ${r.status}</p>
+    </div>
+  `).join('');
+}
+function renderMous(d) {
+  const el = document.getElementById('mous-list');
+  if (!el) return;
+
+  const items = d.mous || [];
+
+  el.innerHTML = items.map(m => `
+   <div class="card">
+      <h3>${m.org}</h3>
+
+      <p><strong>Type:</strong> ${m.type}</p>
+      <p><strong>Purpose:</strong> ${m.purpose}</p>
+      <p><strong>Year:</strong> ${m.year}</p>
+      <p>${m.description}</p>
+
+      <p><strong>Duration:</strong> ${m.duration}</p>
+
+      <p><strong>Benefits:</strong></p>
+      <ul>
+        ${m.benefits.map(b => `<li>${b}</li>`).join('')}
+      </ul>
+
+      ${m.doc_link ? `<a href="${m.doc_link}" target="_blank">View Document</a>` : ''}
+    </div>
+  `).join('');
+}
+function renderTPC(d) {
+  console.log("TPC FUNCTION CALLED", d); 
+  const el = document.getElementById('tpc-list');
+  if (!el) return;
+
+  const items = d.tpc || [];   // ✅ IMPORTANT
+console.log("TPC DATA:", items); 
+  if (items.length === 0) {
+    el.innerHTML = `<p>No placement data available</p>`;
+    return;
+  }
+
+  el.innerHTML = items.map(t => `
+    <div class="card">
+  <h3>Training & Placement Cell</h3>
+
+  <p>${t.intro}</p>
+
+  <h4>Placement Officer</h4>
+  <p>
+    ${t.officer}<br>
+    ${t.officer_email}<br>
+    ${t.officer_phone}
+  </p>
+
+  <h4>Placement Stats</h4>
+  <ul>
+    ${(t.stats || []).map(s => `
+      <li><strong>${s.num}</strong> - ${s.label}</li>
+    `).join('')}
+  </ul>
+
+  <h4>Top Recruiters</h4>
+  <p>${(t.companies || []).join(', ')}</p>
+
+  <h4>Activities</h4>
+  <ul>
+    ${(t.activities || []).map(a => `<li>${a}</li>`).join('')}
+  </ul>
+</div>
+  `).join('');
+}
+
+
 function switchTab(listId, tabId) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
