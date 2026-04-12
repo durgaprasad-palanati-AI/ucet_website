@@ -10,6 +10,12 @@
   <link rel="icon" href="./images/gandhiji.jpeg">
 </head>
 <body>
+  <!--Welcome + Festival GIFs-->
+<div id="splash-screen">
+  <div id="media-container"></div>
+  <h1 id="splash-text">Welcome</h1>
+</div>
+
 
 <!-- TOP BAR -->
 <div class="topbar">
@@ -385,5 +391,89 @@ window.addEventListener("resize", adjustForMobile);
 adjustForMobile();
 </script>
 <button id="goTopBtn" title="Go to top">↑</button>
+<script>
+function getSpecialEvent() {
+  const now = new Date();
+  const day = now.getDate();
+  const month = now.getMonth() + 1;
+
+  let data = {
+    text: "UNIVERSITY COLLEGE OF ENGINEERING AND TECHNOLOGY,Mahatma Gandhi University",
+    type: "image", // gif | image | video
+    src: "images/ambedkar_jayanthi.jpeg",//welcome.mp4",
+    bg: "linear-gradient(135deg, #1e3c72, #2a5298)"
+  };
+
+  // Republic Day
+  if (month === 1 && day === 26) {
+    data = {
+      text: "🇮🇳 Happy Republic Day",
+      type: "video",
+      src: "images/republic-day.mp4",
+      bg: "linear-gradient(135deg, #ff9933, #ffffff, #138808)"
+    };
+  }
+
+  // Ambedkar Jayanthi
+  if (month === 4 && day === 14) {
+    data = {
+      text: "⚖️ Tribute to Dr. B. R. Ambedkar",
+      type: "video",
+      src: "images/ambedkar.mp4",
+      bg: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)"
+    };
+  }
+
+  // Independence Day
+  if (month === 8 && day === 15) {
+    data = {
+      text: "🇮🇳 Happy Independence Day",
+      type: "video",
+      src: "images/independence.mp4",
+      bg: "linear-gradient(135deg, #ff9933, #ffffff, #138808)"
+    };
+  }
+
+  return data;
+}
+
+window.addEventListener("load", function () {
+  const splash = document.getElementById("splash-screen");
+  const text = document.getElementById("splash-text");
+  const container = document.getElementById("media-container");
+
+  const event = getSpecialEvent();
+
+  splash.style.background = event.bg;
+  text.innerText = event.text;
+
+  // CLEAR OLD CONTENT
+  container.innerHTML = "";
+
+  // HANDLE MEDIA TYPES
+  if (event.type === "video") {
+    container.innerHTML = `
+      <video autoplay playsinline>
+        <source src="${event.src}" type="video/mp4">
+      </video>
+    `;
+  } 
+  else {
+    container.innerHTML = `
+      <img src="${event.src}" alt="event media">
+    `;
+  }
+
+  // AUTO CLOSE SPLASH
+  setTimeout(() => {
+    splash.classList.add("hide-splash");
+
+    setTimeout(() => {
+      splash.style.display = "none";
+    }, 2000);
+
+  }, 3500);
+});
+</script>
 </body>
 </html>

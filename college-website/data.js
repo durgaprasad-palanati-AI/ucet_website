@@ -7,7 +7,7 @@
 const COLLEGE_DATA = {
   "info": {
     "name": "UNIVERSITY COLLEGE OF ENGINEERING AND TECHNOLOGY",
-    "affiliation": "Mahatma GAndhi University",
+    "affiliation": "Mahatma Gandhi University",
     "tagline": "Nalgonda,Teleangana,India,508254",
     "phone": "+91 9948121110",
     "email": "principalucet_mgu@gmail.com",
