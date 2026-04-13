@@ -708,7 +708,10 @@ function filterMOUs(type, btn) {
   renderAccordion(filtered);
 }
 window.filterMOUs = filterMOUs;
-
+window.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector('.filter-chip.active');
+  filterMOUs('all', btn);
+});
 // ── NAV MOBILE ──────────────────────────────────────────────
 function toggleMenu() {
   document.querySelector('.nav').classList.toggle('open');
