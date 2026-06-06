@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 6/6/2026, 2:48:41 pm
+//  Last updated: 6/6/2026, 3:04:11 pm
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -115,11 +115,10 @@ const COLLEGE_DATA = {
   ],
   "departments": [
     {
-      "name": "Electronics & Comm.",
-      "about": "B.Tech",
-      "intake": "66 seats",
-      "icon": "fas fa-microchip",
-      "url": "ece.html"
+      "name": "Computer Science & Informatics",
+      "about": "B.Tech.(CSE),MCA,Ph.D.",
+      "intake": "B.Tech.(CSE)-132,MCA-66",
+      "icon": "fas fa-book"
     },
     {
       "name": "Electrical Engg.",
@@ -129,10 +128,11 @@ const COLLEGE_DATA = {
       "url": "eee.html"
     },
     {
-      "name": "Computer Science & Informatics",
-      "about": "B.Tech.(CSE),MCA,Ph.D.",
-      "intake": "B.Tech.(CSE)-132,MCA-66",
-      "icon": "fas fa-book"
+      "name": "Electronics & Comm.",
+      "about": "B.Tech",
+      "intake": "66 seats",
+      "icon": "fas fa-microchip",
+      "url": "ece.html"
     }
   ],
   "faculty": [
