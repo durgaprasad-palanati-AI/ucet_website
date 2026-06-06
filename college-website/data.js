@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 6/6/2026, 3:04:11 pm
+//  Last updated: 6/6/2026, 3:14:30 pm
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -137,36 +137,11 @@ const COLLEGE_DATA = {
   ],
   "faculty": [
     {
-      "name": "Prof. Rekha Redamalla",
-      "designation": "Principal",
-      "dept": "Administration",
-      "qual": "M.Tech., Ph.D-Italy, LMISTE.",
-      "photo": "images/rekhamam.webp",
-      "url": "RRR.html"
-    },
-    {
-      "name": "Dr. M. Jayanthi",
-      "designation": "HOD - CSI",
-      "dept": "Computer Science & Informatics",
-      "qual": "M.Tech( CSE) ,PhD(CSE) OU",
-      "photo": "images/Jayanthi.webp",
-      "url": "jayanthi.html"
-    },
-    {
       "name": "Prof. R.Rekha",
       "designation": "Prof.",
       "dept": "Computer Science & Informatics",
-      "qual": "M.Tech",
-      "photo": "images/rekhamam.webp",
-      "url": "RRR.html"
-    },
-    {
-      "name": "Dr.D.Sandhya Rani",
-      "designation": "Assistant Professor",
-      "dept": "Computer Science & Informatics",
-      "qual": "B.Tech(CSE),M.Tech(CSE),Ph.D.",
-      "photo": "images/Sandhya.webp",
-      "url": "sandhya.html"
+      "qual": "M.Tech., Ph.D (Italy), LMISTE",
+      "photo": "images/rekhamam.webp"
     },
     {
       "name": "Dr. K. Harish Kumar",
@@ -183,6 +158,22 @@ const COLLEGE_DATA = {
       "qual": "M.Tech(CSE), Ph.D.(CSE)",
       "photo": "images/Sudharani.webp",
       "url": "sudharani.html"
+    },
+    {
+      "name": "Dr. M. Jayanthi",
+      "designation": "HOD - CSI",
+      "dept": "Computer Science & Informatics",
+      "qual": "M.Tech( CSE) ,PhD(CSE) OU",
+      "photo": "images/Jayanthi.webp",
+      "url": "jayanthi.html"
+    },
+    {
+      "name": "Dr.D.Sandhya Rani",
+      "designation": "Assistant Professor",
+      "dept": "Computer Science & Informatics",
+      "qual": "B.Tech(CSE),M.Tech(CSE),Ph.D.",
+      "photo": "images/Sandhya.webp",
+      "url": "sandhya.html"
     },
     {
       "name": "P. Durga Prasad",
