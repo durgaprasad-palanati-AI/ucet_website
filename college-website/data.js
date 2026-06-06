@@ -118,7 +118,8 @@ const COLLEGE_DATA = {
       "name": "Computer Science & Informatics",
       "about": "B.Tech.(CSE),MCA,Ph.D.",
       "intake": "B.Tech.(CSE)-132,MCA-66",
-      "icon": "fas fa-book"
+      "icon": "fas fa-book",
+      "url": "cse.html"
     },
     {
       "name": "Electrical Engg.",
