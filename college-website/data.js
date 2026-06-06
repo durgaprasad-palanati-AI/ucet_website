@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 13/4/2026, 1:55:58 am
+//  Last updated: 6/6/2026, 2:03:09 pm
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -134,13 +134,6 @@ const COLLEGE_DATA = {
       "intake": "66 seats",
       "about": "B.Tech",
       "url": "eee.html"
-    },
-    {
-      "name": "MCA",
-      "about": "Post Graduate",
-      "intake": "66 seats",
-      "icon": "fas fa-code",
-      "url": "mca.html"
     },
     {
       "name": "Computer Science & Informatics",
