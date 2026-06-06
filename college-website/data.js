@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 6/6/2026, 2:03:09 pm
+//  Last updated: 6/6/2026, 2:48:41 pm
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -115,13 +115,6 @@ const COLLEGE_DATA = {
   ],
   "departments": [
     {
-      "name": "Computer Science & Engineering",
-      "about": "B.Tech",
-      "intake": "132 seats",
-      "icon": "fas fa-laptop-code",
-      "url": "cse.html"
-    },
-    {
       "name": "Electronics & Comm.",
       "about": "B.Tech",
       "intake": "66 seats",
@@ -137,24 +130,9 @@ const COLLEGE_DATA = {
     },
     {
       "name": "Computer Science & Informatics",
-      "about": "MCA",
-      "intake": "66",
-      "icon": "fas fa-book",
-      "url": "csi.html"
-    },
-    {
-      "name": "Basic Science and Humanities",
-      "about": "B.TECH",
-      "intake": "66",
-      "icon": "fas fa-book",
-      "url": "bsh.html"
-    },
-    {
-      "name": "Mechanical Engineering (Interdisciplinary)",
-      "about": "B.TECH",
-      "intake": "66",
-      "icon": "fas fa-book",
-      "url": "mech.html"
+      "about": "B.Tech.(CSE),MCA,Ph.D.",
+      "intake": "B.Tech.(CSE)-132,MCA-66",
+      "icon": "fas fa-book"
     }
   ],
   "faculty": [
@@ -209,58 +187,56 @@ const COLLEGE_DATA = {
     {
       "name": "P. Durga Prasad",
       "designation": "Assistant Professor (C)",
-      "dept": "Computer Science & Engineering",
+      "dept": "Computer Science & Informatics",
       "qual": "B.TECH, M.TECH",
-      "photo": "images/Durgaprasad.webp",
-      "url": "durgaprasad.html"
+      "photo": "images/Durgaprasad.webp"
     },
     {
       "name": "Mrs. M.Jyothi Rani",
       "designation": "Assistant Professor (C)",
-      "dept": "Computer Science & Engineering",
+      "dept": "Computer Science & Informatics",
       "qual": "B.TECH(CSIT),M.TECH(CSE)",
       "photo": "images/Jyothirani.webp"
     },
     {
       "name": "Ms. Ch. Swarna Latha",
       "designation": "Assistant Professor(C)",
-      "dept": "Computer Science & Engineering",
+      "dept": "Computer Science & Informatics",
       "qual": "BTech(CSE),MTech(CSE)",
-      "photo": "images/Swarnalatha.webp",
-      "url": "swarnalatha.html"
+      "photo": "images/Swarnalatha.webp"
     },
     {
       "name": "Mrs. A. Rajeshwari",
       "designation": "Assistant Professor (C)",
-      "dept": "Computer Science & Engineering",
+      "dept": "Computer Science & Informatics",
       "qual": "B.Tech,M.Tech",
       "photo": "images/Rajeshwari.webp"
     },
     {
       "name": "Mrs. Allani Kalpana",
       "designation": "Assistant Professor (PT)",
-      "dept": "Computer Science & Engineering",
+      "dept": "Computer Science & Informatics",
       "qual": "B.Tech,M.Tech",
       "photo": "images/kalpana.webp"
     },
     {
       "name": "Dr. KANIGIRI BHARATHI",
       "designation": "Assistant Professor (PT)",
-      "dept": "Computer Science & Engineering",
+      "dept": "Computer Science & Informatics",
       "qual": "B.Tech,M.Tech,Ph.D.",
       "photo": "images/Bharathi.webp"
     },
     {
       "name": "Mr. Yerukala Saidulu",
       "designation": "Assistant Professor (PT)",
-      "dept": "Computer Science & Engineering",
+      "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), BEd(Maths),(PHD)",
       "photo": "images/Saidulu.webp"
     },
     {
       "name": "Mrs. Dudaka Mani Chandana",
       "designation": "Assistant Professor (PT)",
-      "dept": "Computer Science & Engineering",
+      "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), BEd(Maths)",
       "photo": "images/Manichandana.webp"
     },
