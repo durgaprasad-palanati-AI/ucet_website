@@ -565,31 +565,51 @@ const COLLEGE_DATA = {
       "doc_link": ""
     }
   ],
-  "facilities": [
-    {
-      "type": "Sports",
-      "name": "Outdoor Ground",
-      "desc": "Cricket, Football, Athletics ground"
-    },
-    {
-      "type": "Sports",
-      "name": "Indoor Games",
-      "desc": "Badminton, Table Tennis, Chess"
-    },
-    {
-      "type": "Gym",
-      "name": "Fitness Center",
-      "desc": "Modern gym with cardio & weights"
-    },
-    {
-      "type": "Health",
-      "name": "Health Center",
-      "desc": "Medical facility for student health needs"
-    },
-    {
-      "type": "Canteen",
-      "name": "INidara mahila canteen",
-      "desc": "snacks,tiffins,beverages"
-    }
-  ]
+"facilities": [
+  {
+    "type": "Sports",
+    "name": "Outdoor Ground",
+    "desc": "Cricket, Football, Athletics ground",
+    "images": [
+      "images/sports/outdoor1.jpg",
+      "images/sports/outdoor2.jpg"
+    ]
+  },
+  {
+    "type": "Sports",
+    "name": "Indoor Games",
+    "desc": "Badminton, Table Tennis, Chess",
+    "images": [
+      "images/sports/indoor1.jpg",
+      "images/sports/indoor2.jpg"
+    ]
+  },
+  {
+    "type": "Gym",
+    "name": "Fitness Center",
+    "desc": "Modern gym with cardio & weights",
+    "images": [
+      "images/gym/gym1.jpg",
+      "images/gym/gym2.jpg"
+    ]
+  },
+  {
+    "type": "Health",
+    "name": "Health Center",
+    "desc": "Medical facility for student health needs",
+    "images": [
+      "images/healthcenter/hc-1.jpeg",
+      "images/healthcenter/hc-2.jpeg",
+      "images/healthcenter/hc-3.jpeg"
+    ]
+  },
+  {
+    "type": "Canteen",
+    "name": "Indira Mahila Canteen",
+    "desc": "snacks, tiffins, beverages",
+    "images": [
+      "images/canteen/canteen1.jpg"
+    ]
+  }
+]
 };

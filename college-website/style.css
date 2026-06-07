@@ -1401,3 +1401,66 @@ body.dark-mode .topbar {
   border-radius: 12px;
   animation: pulse 1.5s infinite;
 }
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.img-slider {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.modal-img {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  scroll-snap-align: center;
+}
+
+
+.facility-preview {
+  margin-top: 25px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.facility-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.facility-img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px;
+}
+
+.facility-img:hover {
+  transform: scale(1.03);
+}

@@ -265,6 +265,8 @@ function renderMous(d) {
 }
 // facilities
 function renderFacilities(d) {
+  globalData = d;
+
   const el = document.getElementById("facilities-list");
   if (!el) return;
 
@@ -279,11 +281,13 @@ function renderFacilities(d) {
     Gym: "fa-dumbbell"
   };
 
-  el.innerHTML = items.map(f => {
+  el.innerHTML = items.map((f, index) => {
     const type = f.type || "Other";
 
     return `
-      <div class="facility-card ${type.toLowerCase()}">
+      <div class="facility-card ${type.toLowerCase()}"
+           onclick="showFacilityImages(${index})">
+
         <div class="facility-icon">
           <i class="fas ${icons[type] || "fa-building"}"></i>
         </div>
@@ -293,9 +297,36 @@ function renderFacilities(d) {
           <span class="facility-type">${type}</span>
           <p>${f.desc || ""}</p>
         </div>
+
       </div>
     `;
   }).join("");
+}
+
+function showFacilityImages(index) {
+  const facility = globalData?.facilities?.[index];
+  if (!facility) return;
+
+  const container = document.getElementById("facility-images");
+
+  if (!container) return;
+
+  const images = facility.images || [];
+
+  container.innerHTML = `
+    <div class="facility-preview">
+      <h2>${facility.name}</h2>
+      <p>${facility.desc || ""}</p>
+
+      <div class="facility-image-grid">
+        ${images.map(img => `
+          <img src="${img}" class="facility-img">
+        `).join("")}
+      </div>
+    </div>
+  `;
+
+  container.scrollIntoView({ behavior: "smooth" });
 }
 /*
 function renderTPC(d) {
