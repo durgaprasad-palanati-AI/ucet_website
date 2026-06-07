@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MOUs & Partnership</title>
+  <link rel="stylesheet" href="style.css"/>
+   <link rel="icon" href="./images/gandhiji.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
+</head>
+<body>
+
+
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span><i class="fas fa-phone"></i> <span id="topbar-phone">+91 99481211100</span></span>
+    <span><i class="fas fa-envelope"></i> <span id="topbar-email">principalucet_mgu@gmail.com</span></span>
+    <span><i class="fas fa-map-marker-alt"></i> <span id="topbar-address">Nalgonda, Telangana</span></span>
+   <div class="topbar-left">
+    <div class="topbar-time" id="topbar-time"></div> 
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header-right"><p class="eamcet">EAMCET code: MGUNSF</p> </div>
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-circle">
+        <img id="college-logo" src="images/ucetlogo.jpg" alt="Logo"  style="width:70px;height:70px;border-radius:50%;object-fit:cover;"/>
+       <!-- <div id="logo-placeholder"><i class="fas fa-university"></i></div>-->
+      </div>
+      <div class="title-center">
+        <h1 id="college-name">University College of Engineering AND Technology</h1>
+        
+        <h2 id="college-affiliation">Mahatma Gandhi University</h2>
+        <p id="college-tagline"> Nalgonda,Teleangana,India,508254</p>
+      </div>
+      <div class="logo-right">
+      <img src="images/telangana_rising.png" alt="Telangana Logo">
+    </div>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    
+  </div>
+</header>
+<nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#departments">Departments</a>
+      <a href="index.html#faculty">Faculty</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#tpc">Training & Placement Cell</a>
+       <a href="mous.html">MOUs</a>
+       <a href="index.html#alumni">Alumni</a>
+       <a href="index.html#antiragging">Anti Ragging</a>
+       <a href="index.html#aboutnssncc">About NSS & NCC</a>
+      <a href="index.html#notices">Notices</a>
+      <a href="index.html#notices">Circulars</a>
+      <a href="facilities.html" style="color:#1a3a6b;font-weight:700">Facilities</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#contact">Contact us</a>
+      <a href="index.html#notices">Scholarships</a>
+    </nav>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <i class="fas fa-chevron-right" style="font-size:10px"></i>
+    <span>Facilities</span>
+  </div>
+
+  <div class="hero-tag">Campus Facilities</div>
+
+  <h1>Sports, Gym & Student Facilities</h1>
+
+  <p>
+    Our institution provides excellent infrastructure to support the physical well-being and overall development of students.
+    The campus includes well-maintained indoor and outdoor sports facilities, modern gym equipment, and essential student support amenities.
+    We encourage active participation in sports and fitness activities to promote a healthy and disciplined lifestyle.
+  </p>
+</div>
+
+
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+
+    <a href="index.html" class="back-home-btn">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+   <div class="facilities-section">
+  <div class="facilities-grid" id="facilities-list"></div>
+</div>
+  
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4 id="footer-college-name"></h4>
+      <p id="footer-desc"></p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#departments">Departments</a></li>
+        <li><a href="index.html#faculty">Faculty</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#" id="f-phone-link"></a></li>
+        <li><a href="#" id="f-email-link"></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-links" id="social-links"></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p id="footer-copy"></p>
+  </div>
+</footer>
+<button id="goTopBtn" title="Go to top">↑</button>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const d = COLLEGE_DATA;
+
+  // ── HEADER / FOOTER ──
+  document.getElementById('college-name').textContent     = d.info.name;
+  document.getElementById('college-tagline').textContent  = d.info.tagline;
+  document.getElementById('college-affiliation').textContent = d.info.affiliation;
+  document.getElementById('topbar-phone').textContent     = d.info.phone;
+  document.getElementById('topbar-email').textContent     = d.info.email;
+  document.getElementById('topbar-address').textContent   = d.info.address;
+  document.getElementById('footer-college-name').textContent = d.info.name;
+  document.getElementById('footer-desc').textContent      = d.info.footerDesc;
+  document.getElementById('footer-copy').textContent      = `© ${new Date().getFullYear()} ${d.info.name}. All Rights Reserved.`;
+  document.getElementById('f-phone-link').textContent     = d.info.phone;
+  document.getElementById('f-email-link').textContent     = d.info.email;
+  document.title = `MOUs & Partnerships — ${d.info.name}`;
+
+  // Social links
+  const icons = { facebook:'fab fa-facebook', instagram:'fab fa-instagram', youtube:'fab fa-youtube', twitter:'fab fa-twitter' };
+  const sl = document.getElementById('social-links');
+  if (sl && d.social) {
+    sl.innerHTML = Object.entries(d.social).map(([k,v]) =>
+      `<a href="${v}"><i class="${icons[k]||'fas fa-link'}"></i></a>`).join('');
+  }
+
+});
+
+
+// ── GO TO TOP ──
+const goTopBtn = document.getElementById('goTopBtn');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    goTopBtn.classList.add('show');
+  } else {
+    goTopBtn.classList.remove('show');
+  }
+});
+goTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+<button id="goTopBtn" title="Go to top">↑</button>
+<script src="theme.js"></script>
+</body>
+</html>

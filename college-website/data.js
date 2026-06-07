@@ -1,7 +1,7 @@
 // ============================================================
 //  DATA.JS  —  Edit this file OR use the Admin Panel
 //  All website content is stored here
-//  Last updated: 6/6/2026, 3:14:30 pm
+//  Last updated: 7/6/2026, 9:10:17 am
 // ============================================================
 
 const COLLEGE_DATA = {
@@ -333,11 +333,18 @@ const COLLEGE_DATA = {
   ],
   "notices": [
     {
+      "date": "15-MAY-2026",
+      "title": "Re-Revised B.Tech Semester-II, IV Regular/Backlog & Semester-I,III Backlog (Regulation-23) Examinations Timetable June-2026",
+      "body": "",
+      "link": "data\\Re-Revised B.Tech Semester-Examinations.pdf",
+      "isNew": true
+    },
+    {
       "date": "10 March",
       "title": "Semester Exams Timetable",
       "body": "B.Tech I, II, III & IV year semester examinations timetable released.",
-      "isNew": true,
-      "link": "admin/B.Tech examinations time table.pdf"
+      "link": "data/B.Tech examinations time table.pdf",
+      "isNew": true
     },
     {
       "date": "08 April",
@@ -556,6 +563,33 @@ const COLLEGE_DATA = {
         "Internship programs"
       ],
       "doc_link": ""
+    }
+  ],
+  "facilities": [
+    {
+      "type": "Sports",
+      "name": "Outdoor Ground",
+      "desc": "Cricket, Football, Athletics ground"
+    },
+    {
+      "type": "Sports",
+      "name": "Indoor Games",
+      "desc": "Badminton, Table Tennis, Chess"
+    },
+    {
+      "type": "Gym",
+      "name": "Fitness Center",
+      "desc": "Modern gym with cardio & weights"
+    },
+    {
+      "type": "Health",
+      "name": "Health Center",
+      "desc": "Medical facility for student health needs"
+    },
+    {
+      "type": "Canteen",
+      "name": "INidara mahila canteen",
+      "desc": "snacks,tiffins,beverages"
     }
   ]
 };

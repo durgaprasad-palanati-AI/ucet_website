@@ -210,6 +210,7 @@ function renderAllLists() {
   renderScholarshipsList();  
   //renderResearchList();
   renderMousList();
+  renderFacilitiesList();
   //renderTPCList();
 }
 /*
@@ -773,6 +774,87 @@ window.deleteSlide = (i) => {
     toast('Deleted');
   }
 };
+
+//------------------- FACILITIES ----
+function renderFacilitiesList() {
+  const el = document.getElementById('facilities-admin-list');
+  if (!el) return;
+
+  const items = Array.isArray(DATA.facilities) ? DATA.facilities : [];
+
+  el.innerHTML = items.map((f, i) => `
+    <div class="drag-item" draggable="true" data-list="facilities" data-idx="${i}">
+      <i class="fas fa-grip-vertical drag-handle"></i>
+
+      <div class="drag-item-info">
+        <strong>${f.name}</strong>
+        <small>${f.type} — ${f.desc}</small>
+      </div>
+
+      <div class="drag-item-actions">
+        <button class="btn-edit" onclick="editFacility(${i})">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button class="btn-del" onclick="deleteFacility(${i})">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  `).join('');
+
+  bindDrag('facilities-admin-list', 'facilities');
+}
+//button handler
+function addFacilityRow() {
+  editFacility(-1);
+}
+window.addFacilityRow = addFacilityRow;
+//EDIT modal
+function editFacility(idx) {
+  const f = idx >= 0 ? DATA.facilities[idx] : {
+    type: '',
+    name: '',
+    desc: ''
+  };
+
+  currentModal = { type: 'facilities', idx };
+
+  openModal('Facility', `
+    <div class="form-group">
+      <label>Type</label>
+      <select id="m-ftype">
+  <option value="Sports" ${f.type === 'Sports' ? 'selected' : ''}>Sports</option>
+  <option value="Gym" ${f.type === 'Gym' ? 'selected' : ''}>Gym</option>
+  <option value="Library" ${f.type === 'Library' ? 'selected' : ''}>Library</option>
+  <option value="Health" ${f.type === 'Health' ? 'selected' : ''}>Health</option>
+  <option value="Canteen" ${f.type === 'Canteen' ? 'selected' : ''}>Canteen</option>
+  <option value="Hostel" ${f.type === 'Hostel' ? 'selected' : ''}>Hostel</option>
+  <option value="Other" ${f.type === 'Other' ? 'selected' : ''}>Other</option>
+</select>
+    </div>
+
+    <div class="form-group">
+      <label>Name</label>
+      <input id="m-fname" type="text" value="${esc(f.name)}"/>
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="m-fdesc">${esc(f.desc)}</textarea>
+    </div>
+  `);
+}
+window.editFacility = editFacility;
+//delete handler
+window.deleteFacility = (i) => {
+  if (confirm('Delete this facility?')) {
+    DATA.facilities.splice(i, 1);
+    renderFacilitiesList();
+    updateDashboardCounts();
+    toast('Deleted');
+  }
+};
+//
 // Handle save from modal (add this inside the saveModal if-else chain)
 // In the existing saveModal function, add:
 
@@ -879,6 +961,21 @@ else if (modalType === 'heroslide') {
   else DATA.heroSlider[idx] = obj;
   renderSliderList();
   closeModal(); toast('Slide saved!');
+}
+if (currentModal.type === 'facilities') {
+  const obj = {
+    type: getVal('m-ftype'),
+    name: getVal('m-fname'),
+    desc: getVal('m-fdesc')
+  };
+
+  if (currentModal.idx >= 0) {
+    DATA.facilities[currentModal.idx] = obj;
+  } else {
+    DATA.facilities.push(obj);
+  }
+
+  renderFacilitiesList();
 }
 
   closeModal();

@@ -33,13 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── ABOUT ──
   setText('about-para1', d.about.para1);
   setText('about-para2', d.about.para2);
-  const programList = document.getElementById('about-points');
+  
 
-d.about.programs.forEach(item => {
-  const li = document.createElement('li');
-  li.textContent = item;
-  programList.appendChild(li);
-});
+const programList = document.getElementById('about-points');
+
+if (programList && Array.isArray(d.about?.programs)) {
+  programList.innerHTML = ""; // optional clean reset
+
+  d.about.programs.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    programList.appendChild(li);
+  });
+}
 
   setText('about-para3', d.about.para3);
 setText('about-para4', d.about.para4);
@@ -114,6 +120,8 @@ renderScholarships('scholarships-list', d.scholarships || []);
 //
 //renderResearch(d);
 renderMous(d);
+//
+renderFacilities(d);
 //renderTPC(d);
   // ── GALLERY ──
   const gGrid = document.getElementById('gallery-grid');
@@ -254,6 +262,40 @@ function renderMous(d) {
       ${m.doc_link ? `<a href="${m.doc_link}" target="_blank">View Document</a>` : ''}
     </div>
   `).join('');
+}
+// facilities
+function renderFacilities(d) {
+  const el = document.getElementById("facilities-list");
+  if (!el) return;
+
+  const items = Array.isArray(d.facilities) ? d.facilities : [];
+
+  const icons = {
+    Sports: "fa-futbol",
+    Ground: "fa-futbol",
+    Games: "fa-gamepad",
+    Health: "fa-briefcase-medical",
+    Canteen: "fa-utensils",
+    Gym: "fa-dumbbell"
+  };
+
+  el.innerHTML = items.map(f => {
+    const type = f.type || "Other";
+
+    return `
+      <div class="facility-card ${type.toLowerCase()}">
+        <div class="facility-icon">
+          <i class="fas ${icons[type] || "fa-building"}"></i>
+        </div>
+
+        <div class="facility-content">
+          <h3>${f.name || "No Name"}</h3>
+          <span class="facility-type">${type}</span>
+          <p>${f.desc || ""}</p>
+        </div>
+      </div>
+    `;
+  }).join("");
 }
 /*
 function renderTPC(d) {
