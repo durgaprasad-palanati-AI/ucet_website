@@ -452,38 +452,107 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 #goTopBtn:hover {
   background-color: #1b5e20;
 }
-/* principal's message*/
+/* Principal's Message */
+
 .principal-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* centers everything horizontally */
-  text-align: justify;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 .principal-img {
-  width: 250px;          /* control image size */
+  width: 280px;
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 20px auto;  /* centers image */
-  border-radius: 10px;   /* optional nice look */
+  margin: 0 auto 25px;
+  border-radius: 12px;
+  border: 4px solid #f5f5f5;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .principal-text {
   text-align: justify;
-  line-height: 1.7;
+  line-height: 1.9;
+  color: #333;
+  font-size: 16px;
 }
 
 .quote {
   font-style: italic;
-  font-weight: bold;
+  font-weight: 600;
   color: #2e7d32;
-  margin-bottom: 15px;
+  background: #f8fff8;
+  border-left: 5px solid #2e7d32;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  font-size: 18px;
 }
 
 .principal-sign {
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e5e5e5;
+  text-align: right;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.principal-sign strong {
+  color: #800000;
+  font-size: 20px;
+}
+
+.section h2 {
+  text-align: center;
+  color: #800000;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #d4af37;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+.back-link{
+  display:inline-block;
+  margin-top:20px;
+  text-decoration:none;
+  font-weight:600;
+  color:#800000;
+}
+
+.back-link:hover{
+  color:#d4af37;
+}
+.page-subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #5bda0b;
+    letter-spacing: 1px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 5px #d4af37,
+            0 0 10px #d4af37;
+    }
+    to {
+        text-shadow:
+            0 0 15px #d4af37,
+            0 0 25px #d4af37,
+            0 0 35px #d4af37;
+    }
 }
 /* Center overlay */
 .overlay {
