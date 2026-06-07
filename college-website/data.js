@@ -142,7 +142,8 @@ const COLLEGE_DATA = {
       "designation": "Prof.",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech., Ph.D (Italy), LMISTE",
-      "photo": "images/rekhamam.webp"
+      "photo": "images/rekhamam.webp",
+      "url": "staff_profiles/RRR.html"
     },
     {
       "name": "Dr. K. Harish Kumar",
@@ -150,7 +151,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE),LMCSI,LMISTE",
       "photo": "images/Harish.webp",
-      "url": "harish.html"
+      "url": "staff_profiles/harish.html"
     },
     {
       "name": "Dr. Ch. Sudha Rani",
@@ -158,7 +159,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), Ph.D.(CSE)",
       "photo": "images/Sudharani.webp",
-      "url": "sudharani.html"
+      "url": "staff_profiles/sudharani.html"
     },
     {
       "name": "Dr. M. Jayanthi",
@@ -166,7 +167,7 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech( CSE) ,PhD(CSE) OU",
       "photo": "images/Jayanthi.webp",
-      "url": "jayanthi.html"
+      "url": "staff_profiles/jayanthi.html"
     },
     {
       "name": "Dr.D.Sandhya Rani",
@@ -174,161 +175,183 @@ const COLLEGE_DATA = {
       "dept": "Computer Science & Informatics",
       "qual": "B.Tech(CSE),M.Tech(CSE),Ph.D.",
       "photo": "images/Sandhya.webp",
-      "url": "sandhya.html"
+      "url": "staff_profiles/sandhya.html"
     },
     {
       "name": "P. Durga Prasad",
       "designation": "Assistant Professor (C)",
       "dept": "Computer Science & Informatics",
       "qual": "B.TECH, M.TECH",
-      "photo": "images/Durgaprasad.webp"
+      "photo": "images/Durgaprasad.webp",
+      'url': "staff_profiles/durga.html"
     },
     {
       "name": "Mrs. M.Jyothi Rani",
       "designation": "Assistant Professor (C)",
       "dept": "Computer Science & Informatics",
       "qual": "B.TECH(CSIT),M.TECH(CSE)",
-      "photo": "images/Jyothirani.webp"
+      "photo": "images/Jyothirani.webp",
+      "url": "staff_profiles/jyothirani.html"
     },
     {
       "name": "Ms. Ch. Swarna Latha",
       "designation": "Assistant Professor(C)",
       "dept": "Computer Science & Informatics",
       "qual": "BTech(CSE),MTech(CSE)",
-      "photo": "images/Swarnalatha.webp"
+      "photo": "images/Swarnalatha.webp",
+      "url": "staff_profiles/swarnalatha.html"
     },
     {
       "name": "Mrs. A. Rajeshwari",
       "designation": "Assistant Professor (C)",
       "dept": "Computer Science & Informatics",
       "qual": "B.Tech,M.Tech",
-      "photo": "images/Rajeshwari.webp"
+      "photo": "images/Rajeshwari.webp",
+      "url": "staff_profiles/rajeshwari.html"
     },
     {
       "name": "Mrs. Allani Kalpana",
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Informatics",
       "qual": "B.Tech,M.Tech",
-      "photo": "images/kalpana.webp"
+      "photo": "images/kalpana.webp",
+      "url": "staff_profiles/kalpana.html"
     },
     {
       "name": "Dr. KANIGIRI BHARATHI",
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Informatics",
       "qual": "B.Tech,M.Tech,Ph.D.",
-      "photo": "images/Bharathi.webp"
+      "photo": "images/Bharathi.webp",
+      "url": "staff_profiles/bharathi.html"
     },
     {
       "name": "Mr. Yerukala Saidulu",
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), BEd(Maths),(PHD)",
-      "photo": "images/Saidulu.webp"
+      "photo": "images/Saidulu.webp",
+      "url": "staff_profiles/saidulu.html"
     },
     {
       "name": "Mrs. Dudaka Mani Chandana",
       "designation": "Assistant Professor (PT)",
       "dept": "Computer Science & Informatics",
       "qual": "M.Tech(CSE), BEd(Maths)",
-      "photo": "images/Manichandana.webp"
+      "photo": "images/Manichandana.webp",
+      "url": "staff_profiles/manichandana.html"
     },
     {
       "name": "G.Mareswararao",
       "designation": "Assistant Professor(C), HOD",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "images/G.MareswaraRao.webp"
+      "photo": "images/G.MareswaraRao.webp",
+      "url": "staff_profiles/mareshwarrao.html"
     },
     {
       "name": "Mrs.MounikaKasarla",
       "designation": "Assistant Professor(C)",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "images/Mrs.MounikaKasarla.webp"
+      "photo": "images/Mrs.MounikaKasarla.webp",
+      "url": "staff_profiles/mounikakasarla.html"
     },
     {
       "name": "Mrs.HumaAfreen",
       "designation": "Assistant Professor(C)",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "images/Mrs.HumaAfreen.webp"
+      "photo": "images/Mrs.HumaAfreen.webp",
+      "url": "staff_profiles/humaafreen.html"
     },
     {
       "name": "V.ADILAKSHMI",
       "designation": "Assistant Professor(C)",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "images/V.ADILAKSHMI.webp"
+      "photo": "images/V.ADILAKSHMI.webp",
+      "url": "staff_profiles/adilakshmi.html"
     },
     {
       "name": "K.AVINASH BABU",
       "designation": "Assistant Professor(C)",
       "dept": "Electronics & Comm.",
       "qual": "M.Tech",
-      "photo": "images/K.AVINASH BABU.webp"
+      "photo": "images/K.AVINASH BABU.webp",
+      "url": "staff_profiles/avinashbabu.html"
     },
     {
       "name": "Y. Naga Raju",
       "designation": "Assistant Professor(C)-HOD",
       "dept": "Electrical Engg.",
       "qual": "M.Tech",
-      "photo": "images/YNagaRaju.webp"
+      "photo": "images/YNagaRaju.webp",
+      "url": "staff_profiles/ynagaraju.html"
     },
     {
       "name": "Mrs. Tallapalli Mounika",
       "designation": "Assistant Professor (C)",
       "dept": "Electrical Engg.",
       "qual": "M.Tech.",
-      "photo": "images/MrsTallapalliMounika.webp"
+      "photo": "images/MrsTallapalliMounika.webp",
+      "url": "staff_profiles/mounikatallapalli.html"
     },
     {
       "name": "R.RAMASWAMY",
       "designation": "Assistant Professor(PT)",
       "dept": "Electrical Engg.",
       "qual": "M.Tech.",
-      "photo": "images/ramas.webp"
+      "photo": "images/ramas.webp",
+      "url": "staff_profiles/ramas.html"
     },
     {
       "name": "K.LAVANYA",
       "designation": "Assistant Professor (PT)",
       "dept": "Electrical Engg.",
       "qual": "M.Tech",
-      "photo": "images/lavanya.webp"
+      "photo": "images/lavanya.webp",
+      "url": "staff_profiles/lavanya.html"
     },
     {
       "name": "Dr. Vijay Kumar Chityala",
       "designation": "Assistant Professor (Contract)",
       "dept": "Basic Science and Humanities",
       "qual": "M.Sc., Ph.D",
-      "photo": "images/Vijay.bmp"
+      "photo": "images/Vijay.bmp",
+      "url": "staff_profiles/vijay.html"
     },
     {
       "name": "Dr. M. Ramachandru",
       "designation": "Assistant Professor (C)",
       "dept": "Basic Science and Humanities",
       "qual": "M.Sc., B.Ed., Ph.D., APSET",
-      "photo": "images/Ramachandru.webp"
+      "photo": "images/Ramachandru.webp",
+      "url": "staff_profiles/ramachandru.html"
     },
     {
       "name": "PATHI. SHIVA SHANKER",
       "designation": "Assistant Professor",
       "dept": "Mechanical Engineering (Interdisciplinary)",
       "qual": "B.E(Mech), M.Tech(CAD/CAM), Senior Member - ISME",
-      "photo": "images/Shivashankar.bmp"
+      "photo": "images/Shivashankar.bmp",
+      "url": "staff_profiles/shivashankar.html"
     },
     {
       "name": "K. ASHWINI",
       "designation": "Assistant Professor",
       "dept": "Mechanical Engineering (Interdisciplinary)",
       "qual": "B.Tech(Mech), M.Tech(CAD/CAM), (Ph.D)",
-      "photo": "images/Ashwini.bmp"
+      "photo": "images/Ashwini.bmp",
+      "url": "staff_profiles/ashwini.html"
     },
     {
       "name": "D. SRINIVAS",
       "designation": "Assistant Professor",
       "dept": "Mechanical Engineering (Interdisciplinary)",
       "qual": "B.Tech(Mech), M.Tech(MD)",
-      "photo": "images/dsr.webp"
+      "photo": "images/dsr.webp",
+      "url": "staff_profiles/dsr.html"
     }
   ],
   "notices": [

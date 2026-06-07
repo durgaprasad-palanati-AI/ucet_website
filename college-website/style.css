@@ -455,13 +455,18 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: v
 /* principal's message*/
 .principal-box {
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;   /* centers everything horizontally */
+  text-align: justify;
 }
 
 .principal-img {
-  width: 220px;
-  border-radius: 10px;
+  width: 250px;          /* control image size */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;  /* centers image */
+  border-radius: 10px;   /* optional nice look */
 }
 
 .principal-text {
